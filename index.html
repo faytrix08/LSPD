@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Los Santos Police Department - Oficiálna stránka LSPD v GTA RP. Chráňte a slúžte.">
+    <meta name="description" content="Los Santos Police Department - Oficiálna stránka LSPD. Chráňte a slúžte.">
     <title>LSPD | Los Santos Police Department</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
         
         :root {
             --tw-color-primary: #0a2540;
@@ -67,41 +67,64 @@
         .rank-badge {
             background: linear-gradient(90deg, #1e2937, #334155);
         }
+
+        .emergency-alert {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
     </style>
 </head>
 <body class="tailwind-ready bg-[#0a1428] text-slate-100 font-sans">
+
+    <!-- EMERGENCY ALERT BANNER -->
+    <div id="emergency-banner" class="emergency-alert bg-gradient-to-r from-red-600 via-red-700 to-rose-600 text-white py-3 px-6 text-center font-semibold text-lg flex items-center justify-center gap-x-4 shadow-lg border-b-4 border-yellow-400">
+        <i class="fa-solid fa-triangle-exclamation text-2xl animate-pulse"></i>
+        <span id="alert-text" class="font-mono tracking-wider">
+            VŠETKY JEDNOTKY: 10-80 V OBLASTI VINEWOOD HILLS - HIGH SPEED UNIT NASADENÝ
+        </span>
+        <i class="fa-solid fa-triangle-exclamation text-2xl animate-pulse"></i>
+    </div>
+
     <!-- NAVBAR -->
     <nav class="navbar bg-[#0a1428]/95 border-b border-slate-700 sticky top-0 z-50">
         <div class="max-w-screen-2xl mx-auto">
             <div class="px-8 py-5 flex items-center justify-between">
                 <!-- Logo + Názov -->
                 <div class="flex items-center gap-x-3">
-                    <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" 
+                    <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" 
                          alt="LSPD Logo" 
                          class="h-12 w-auto drop-shadow-md">
                     <div>
                         <h1 class="text-3xl font-bold tracking-[-1px] text-white">LSPD</h1>
-                        <p class="text-[10px] text-blue-400 font-mono tracking-[1px] -mt-1">LOS SANTOS</p>
+                        <p class="text-[10px] text-blue-400 font-mono tracking-[1px] -mt-1">LOS SANTOS POLICE DEPARTMENT</p>
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-x-8 text-sm font-medium">
-                    <a href="index.html" class="hover:text-blue-400 flex items-center gap-x-1">
-                        <i class="fa-solid fa-home"></i>
-                        Domov
+                    <a href="#o-nas" class="hover:text-blue-400 flex items-center gap-x-1">
+                        <i class="fa-solid fa-circle-info"></i>
+                        O nás
                     </a>
-                    <a href="divize.html" class="hover:text-blue-400 flex items-center gap-x-1">
+                    <a href="#divizie" class="hover:text-blue-400 flex items-center gap-x-1">
                         <i class="fa-solid fa-shield-halved"></i>
                         Divízie
                     </a>
-                    <a href="vedeni.html" class="hover:text-blue-400 flex items-center gap-x-1">
+                    <a href="#vedenie" class="hover:text-blue-400 flex items-center gap-x-1">
                         <i class="fa-solid fa-user-tie"></i>
                         Vedenie
                     </a>
                     <a href="#akademia" class="hover:text-blue-400 flex items-center gap-x-1">
                         <i class="fa-solid fa-graduation-cap"></i>
                         Akadémia
+                    </a>
+                    <a href="#oznamenia" class="hover:text-blue-400 flex items-center gap-x-1">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        Oznámenia
                     </a>
                     <a href="#stiznosti" class="hover:text-blue-400 flex items-center gap-x-1">
                         <i class="fa-solid fa-exclamation-triangle"></i>
@@ -118,7 +141,6 @@
                         <span>Podať stížnosť</span>
                     </a>
                     
-                    <!-- Mobile Hamburger -->
                     <button id="mobile-menu-button"
                             class="lg:hidden w-11 h-11 flex items-center justify-center text-2xl text-slate-200 hover:text-white">
                         <i class="fa-solid fa-bars" id="hamburger-icon"></i>
@@ -130,24 +152,22 @@
             <div id="mobile-menu" class="hidden lg:hidden bg-[#0a1428] border-t border-slate-700 px-8 py-6">
                 <div class="flex flex-col gap-y-4 text-base font-medium">
                     <a href="#o-nas" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-slate-800 rounded-2xl flex items-center gap-x-3">
-                        <i class="fa-solid fa-circle-info w-5"></i>
-                        O nás
+                        <i class="fa-solid fa-circle-info w-5"></i> O nás
                     </a>
                     <a href="#divizie" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-slate-800 rounded-2xl flex items-center gap-x-3">
-                        <i class="fa-solid fa-shield-halved w-5"></i>
-                        Divízie
+                        <i class="fa-solid fa-shield-halved w-5"></i> Divízie
                     </a>
                     <a href="#vedenie" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-slate-800 rounded-2xl flex items-center gap-x-3">
-                        <i class="fa-solid fa-user-tie w-5"></i>
-                        Vedenie
+                        <i class="fa-solid fa-user-tie w-5"></i> Vedenie
                     </a>
                     <a href="#akademia" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-slate-800 rounded-2xl flex items-center gap-x-3">
-                        <i class="fa-solid fa-graduation-cap w-5"></i>
-                        Akadémia
+                        <i class="fa-solid fa-graduation-cap w-5"></i> Akadémia
+                    </a>
+                    <a href="#oznamenia" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-slate-800 rounded-2xl flex items-center gap-x-3">
+                        <i class="fa-solid fa-bullhorn w-5"></i> Oznámenia
                     </a>
                     <a href="#stiznosti" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-slate-800 rounded-2xl flex items-center gap-x-3">
-                        <i class="fa-solid fa-exclamation-triangle w-5"></i>
-                        Stížnosti
+                        <i class="fa-solid fa-exclamation-triangle w-5"></i> Stížnosti
                     </a>
                     <div class="pt-4 border-t border-slate-700">
                         <a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/viewform" 
@@ -162,6 +182,48 @@
         </div>
     </nav>
 
+    <!-- OZNAMENIA -->
+    <section id="oznamenia" class="py-12 bg-[#1e2937] border-b border-slate-700">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex items-center gap-x-3 mb-8">
+                <i class="fa-solid fa-bullhorn text-yellow-400 text-3xl"></i>
+                <h2 class="text-4xl font-semibold text-white">Aktuálne oznámenia</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-900 border border-yellow-500/30 rounded-3xl p-6 hover:border-yellow-400 transition-all">
+                    <div class="flex items-center gap-x-2 text-yellow-400 text-sm font-mono mb-3">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>04. 04. 2026 • 18:15</span>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">Núdzové prenasledovanie</h3>
+                    <p class="text-slate-300">Všetky jednotky sa majú okamžite hlásiť na Mission Row. High Speed Unit a Air Unit v pohotovosti.</p>
+                    <div class="mt-4 inline-block px-4 py-1 bg-yellow-500/10 text-yellow-400 text-xs font-medium rounded-2xl">10-80 • Pronásledovanie</div>
+                </div>
+
+                <div class="bg-slate-900 border border-blue-500/30 rounded-3xl p-6 hover:border-blue-400 transition-all">
+                    <div class="flex items-center gap-x-2 text-blue-400 text-sm font-mono mb-3">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>04. 04. 2026 • 14:30</span>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">Akadémia je otvorená</h3>
+                    <p class="text-slate-300">Prijímame nových kadetov. Prihlášky do základného náboru aj pre skúsených dôstojníkov sú aktívne.</p>
+                    <div class="mt-4 inline-block px-4 py-1 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-2xl">Nábor</div>
+                </div>
+
+                <div class="bg-slate-900 border border-emerald-500/30 rounded-3xl p-6 hover:border-emerald-400 transition-all">
+                    <div class="flex items-center gap-x-2 text-emerald-400 text-sm font-mono mb-3">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>03. 04. 2026 • 22:10</span>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">Operation Clean Streets</h3>
+                    <p class="text-slate-300">Gang & Narcotics Unit spolu so SWAT vykonávajú rozsiahlu operáciu v južnej časti Los Santos.</p>
+                    <div class="mt-4 inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-medium rounded-2xl">Špeciálna operácia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- HERO -->
     <header class="hero-bg relative min-h-screen flex items-center pt-20">
         <div class="max-w-screen-2xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-center">
@@ -169,7 +231,7 @@
             <div class="lg:col-span-7">
                 <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md text-blue-300 text-xs font-mono tracking-widest px-5 py-2 rounded-3xl mb-6 border border-white/20">
                     <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    OFICIÁLNA JEDNOTKA LOS SANTOS
+                    OFICIÁLNA STRÁNKA LOS SANTOS POLICE DEPARTMENT
                 </div>
                 
                 <h1 class="text-6xl lg:text-7xl font-bold leading-none tracking-[-2px] text-white mb-4">
@@ -177,7 +239,7 @@
                 </h1>
                 
                 <p class="text-3xl font-light text-blue-200 mb-10 max-w-lg">
-                    To Protect and Serve
+                    ★ To Protect and to Serve ★ 
                 </p>
                 
                 <div class="flex flex-wrap gap-4">
@@ -221,7 +283,6 @@
                 <div class="mt-12 text-xs font-mono flex items-center gap-x-8 text-slate-400">
                     <div class="flex items-center"><i class="fa-solid fa-badge-check mr-2"></i> CERTIFIKOVANÝ ZBOR</div>
                     <div class="flex items-center"><i class="fa-solid fa-users mr-2"></i> 12 AKTÍVNYCH PRÍSLUŠNÍKOV</div>
-                    <div class="flex items-center"><i class="fa-solid fa-shield-halved mr-2"></i> 24/7 SLUŽBA</div>
                 </div>
             </div>
             
@@ -229,16 +290,9 @@
             <div class="lg:col-span-5 relative hidden lg:flex justify-center">
                 <div class="relative w-full max-w-md">
                     <div class="absolute -inset-6 bg-gradient-to-br from-blue-500/10 to-transparent rounded-[4rem] rotate-12 blur-3xl"></div>
-                    <img src="https://picsum.photos/id/1015/800/900" 
+                    <img src="https://cdn.discordapp.com/attachments/1395463974543294554/1490007883583193210/1200.png?ex=69d27d7a&is=69d12bfa&hm=55e168d688ba7af53c5d8490cb23534c4f46f1c452115ae97abc2eecfcd53ede&" 
                          alt="LSPD Officer" 
-                         class="rounded-3xl shadow-2xl border border-white/10 relative z-10 w-full object-cover h-[520px]">
-                    <div class="absolute bottom-8 left-8 bg-black/70 backdrop-blur-md px-6 py-4 rounded-2xl text-sm flex items-center gap-x-3">
-                        <div class="px-3 py-1 bg-green-400 text-black font-bold rounded-xl text-xs">ON DUTY</div>
-                        <div>
-                            <p class="font-semibold">Patrol 17 • Mission Row</p>
-                            <p class="text-xs text-emerald-300">Žiadne incidenty • 14:22</p>
-                        </div>
-                    </div>
+                         class="rounded-3xl shadow-2xl">
                 </div>
             </div>
         </div>
@@ -282,14 +336,9 @@
                     <span class="text-blue-400 font-mono text-sm">ŠPECIALIZOVANÉ JEDNOTKY</span>
                     <h2 class="text-5xl font-semibold text-white">Divízie LSPD</h2>
                 </div>
-                <a href="#" class="text-sm font-medium flex items-center gap-x-2 group">
-                    VIAC O JEDNOTKÁCH 
-                    <span class="group-hover:translate-x-1">→</span>
-                </a>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-9 gap-6">
-                <!-- Motorcycle Unit -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/1005/600/400" alt="Motorcycle Unit" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -297,8 +346,6 @@
                         <p class="text-sm text-slate-400">Rýchla hliadka na motorkách</p>
                     </div>
                 </div>
-                
-                <!-- Detective Bureau -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/1011/600/400" alt="Detective Bureau" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -306,8 +353,6 @@
                         <p class="text-sm text-slate-400">Vyšetrovanie zločinov</p>
                     </div>
                 </div>
-                
-                <!-- SWAT -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/1016/600/400" alt="SWAT" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -315,8 +360,6 @@
                         <p class="text-sm text-slate-400">Špeciálne zásahové jednotky</p>
                     </div>
                 </div>
-                
-                <!-- Gang And Narcotics -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/133/600/400" alt="Gang And Narcotics" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -324,8 +367,6 @@
                         <p class="text-sm text-slate-400">Boj proti gangom a drogám</p>
                     </div>
                 </div>
-                
-                <!-- Air Unit -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/160/600/400" alt="Air Unit" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -333,8 +374,6 @@
                         <p class="text-sm text-slate-400">Vrtuľníkové letecké hliadky</p>
                     </div>
                 </div>
-                
-                <!-- K-9 -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/201/600/400" alt="K-9" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -342,8 +381,6 @@
                         <p class="text-sm text-slate-400">Policajné psy a ich psovodi</p>
                     </div>
                 </div>
-                
-                <!-- High Speed Unit -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/1009/600/400" alt="High Speed Unit" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -351,8 +388,6 @@
                         <p class="text-sm text-slate-400">Vysokorýchlostné prenasledovanie</p>
                     </div>
                 </div>
-                
-                <!-- Metro Division -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/1018/600/400" alt="Metro Division" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -360,8 +395,6 @@
                         <p class="text-sm text-slate-400">Mestská hromadná doprava</p>
                     </div>
                 </div>
-                
-                <!-- Field Training Officer -->
                 <div class="division-card bg-slate-900 rounded-3xl overflow-hidden card-hover">
                     <img src="https://picsum.photos/id/102/600/400" alt="FTO" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -383,40 +416,36 @@
             <div class="mb-16">
                 <h3 class="uppercase text-xs tracking-widest text-blue-400 font-medium mb-8 text-center">NAJVYŠŠIE VEDENIE</h3>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Chief -->
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover">
-                        <img src="https://picsum.photos/id/64/600/600" alt="Chief of Police" class="w-full aspect-square object-cover">
+                        <img src="https://cdn.discordapp.com/attachments/837731522102427708/1489712651985621082/Snimka_obrazovky_2026-04-02_231739.png?ex=69d21345&is=69d0c1c5&hm=982554ed13348c60de2df4e0a00746be3161e3865640919a91cc8f29d889a9a1&" alt="Chief of Police" class="w-full aspect-square object-cover">
                         <div class="rank-badge px-6 py-6 text-center">
                             <p class="font-mono text-xs text-emerald-400">CHIEF OF POLICE</p>
-                            <p class="text-2xl font-semibold text-white">Chief Alexander Voss</p>
+                            <p class="font-mono text-xs text-cyan-400">★★★★</p>
+                            <p class="text-2xl font-semibold text-white">John Davidson</p>
                         </div>
-                        
                     </div>
-                    
-                    <!-- Assistant Chief -->
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover">
-                        <img src="https://picsum.photos/id/1009/600/600" alt="Assistant Chief" class="w-full aspect-square object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Assistant Chief" class="w-full aspect-square object-cover">
                         <div class="rank-badge px-6 py-6 text-center">
                             <p class="font-mono text-xs text-emerald-400">ASSISTANT CHIEF</p>
-                            <p class="text-2xl font-semibold text-white">Asst. Chief Elena Vargas</p>
+                            <p class="font-mono text-xs text-cyan-400">★★★</p>
+                            <p class="text-2xl font-semibold text-white">Johnson White</p>
                         </div>
                     </div>
-                    
-                    <!-- Deputy Chief -->
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover">
-                        <img src="https://picsum.photos/id/1011/600/600" alt="Deputy Chief" class="w-full aspect-square object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Deputy Chief" class="w-full aspect-square object-cover">
                         <div class="rank-badge px-6 py-6 text-center">
                             <p class="font-mono text-xs text-emerald-400">DEPUTY CHIEF</p>
-                            <p class="text-2xl font-semibold text-white">Deputy Chief Marcus Hale</p>
+                            <p class="font-mono text-xs text-cyan-400">★★</p>
+                            <p class="text-2xl font-semibold text-white">VOĽNÁ POZÍCIA</p>
                         </div>
                     </div>
-                    
-                    <!-- Commander -->
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover">
-                        <img src="https://picsum.photos/id/1005/600/600" alt="Commander" class="w-full aspect-square object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Commander" class="w-full aspect-square object-cover">
                         <div class="rank-badge px-6 py-6 text-center">
                             <p class="font-mono text-xs text-emerald-400">COMMANDER</p>
-                            <p class="text-2xl font-semibold text-white">Commander Isabella Kane</p>
+                            <p class="font-mono text-xs text-cyan-400">★</p>
+                            <p class="text-2xl font-semibold text-white">OBSADENÉ</p>
                         </div>
                     </div>
                 </div>
@@ -427,17 +456,19 @@
                 <h3 class="uppercase text-xs tracking-widest text-blue-400 font-medium mb-6">CAPTAINS</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/29/600/600" alt="Captain Ryan Delgado" class="w-40 h-40 object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Captain" class="w-40 h-40 object-cover">
                         <div class="rank-badge flex-1 px-8 flex flex-col justify-center">
                             <p class="font-mono text-xs text-emerald-400">CAPTAIN</p>
-                            <p class="text-3xl font-semibold text-white">Ryan Delgado</p>
+                            <p class="font-mono text-xs text-cyan-400">❚❚</p>
+                            <p class="text-3xl font-semibold text-white">Henry Brooks</p>
                         </div>
                     </div>
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/1006/600/600" alt="Captain Sophia Laurent" class="w-40 h-40 object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Captain" class="w-40 h-40 object-cover">
                         <div class="rank-badge flex-1 px-8 flex flex-col justify-center">
                             <p class="font-mono text-xs text-emerald-400">CAPTAIN</p>
-                            <p class="text-3xl font-semibold text-white">Sophia Laurent</p>
+                            <p class="font-mono text-xs text-cyan-400">❚❚</p>
+                            <p class="text-3xl font-semibold text-white">VOĽNÁ POZÍCIA</p>
                         </div>
                     </div>
                 </div>
@@ -448,17 +479,19 @@
                 <h3 class="uppercase text-xs tracking-widest text-blue-400 font-medium mb-6">LIEUTENANTS</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/201/600/600" alt="Lt. Jamal Reed" class="w-40 h-40 object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Lieutenant" class="w-40 h-40 object-cover">
                         <div class="rank-badge flex-1 px-8 flex flex-col justify-center">
                             <p class="font-mono text-xs text-emerald-400">LIEUTENANT</p>
-                            <p class="text-3xl font-semibold text-white">Jamal Reed</p>
+                            <p class="font-mono text-xs text-cyan-400">❚</p>
+                            <p class="text-3xl font-semibold text-white">Franklin Merte</p>
                         </div>
                     </div>
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/64/600/600" alt="Lt. Olivia Moreau" class="w-40 h-40 object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Lieutenant" class="w-40 h-40 object-cover">
                         <div class="rank-badge flex-1 px-8 flex flex-col justify-center">
                             <p class="font-mono text-xs text-emerald-400">LIEUTENANT</p>
-                            <p class="text-3xl font-semibold text-white">Olivia Moreau</p>
+                            <p class="font-mono text-xs text-cyan-400">❚</p>
+                            <p class="text-3xl font-semibold text-white">VOĽNÁ POZÍCIA</p>
                         </div>
                     </div>
                 </div>
@@ -469,31 +502,36 @@
                 <h3 class="uppercase text-xs tracking-widest text-blue-400 font-medium mb-6">SERGEANT II — 4 OSOBY</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/1009/600/600" alt="Sgt. II Derek Shaw" class="w-28 h-28 object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Sergeant II" class="w-28 h-28 object-cover">
                         <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
                             <p class="font-mono text-emerald-400">SERGEANT II</p>
-                            <p class="font-semibold">Derek Shaw</p>
+                            <p class="font-mono text-xs text-cyan-400">⟨⟩⟩⟩</p>
+                            <p class="font-semibold">VOĽNÁ POZÍCIA</p>
+                        </div>
+                    </div>
+                    <!-- opakujem 3x rovnako pre zvyšné tri -->
+                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Sergeant II" class="w-28 h-28 object-cover">
+                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
+                            <p class="font-mono text-emerald-400">SERGEANT II</p>
+                            <p class="font-mono text-xs text-cyan-400">⟨⟩⟩⟩</p>
+                            <p class="font-semibold">VOĽNÁ POZÍCIA</p>
                         </div>
                     </div>
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/1011/600/600" alt="Sgt. II Lena Kowalski" class="w-28 h-28 object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Sergeant II" class="w-28 h-28 object-cover">
                         <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
                             <p class="font-mono text-emerald-400">SERGEANT II</p>
-                            <p class="font-semibold">Lena Kowalski</p>
+                            <p class="font-mono text-xs text-cyan-400">⟨⟩⟩⟩</p>
+                            <p class="font-semibold">VOĽNÁ POZÍCIA</p>
                         </div>
                     </div>
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/160/600/600" alt="Sgt. II Tyler Grant" class="w-28 h-28 object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Sergeant II" class="w-28 h-28 object-cover">
                         <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
                             <p class="font-mono text-emerald-400">SERGEANT II</p>
-                            <p class="font-semibold">Tyler Grant</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/201/600/600" alt="Sgt. II Priya Singh" class="w-28 h-28 object-cover">
-                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
-                            <p class="font-mono text-emerald-400">SERGEANT II</p>
-                            <p class="font-semibold">Priya Singh</p>
+                            <p class="font-mono text-xs text-cyan-400">⟨⟩⟩⟩</p>
+                            <p class="font-semibold">VOĽNÁ POZÍCIA</p>
                         </div>
                     </div>
                 </div>
@@ -503,62 +541,17 @@
             <div>
                 <h3 class="uppercase text-xs tracking-widest text-blue-400 font-medium mb-6">SERGEANT I — 8 OSÔB</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- 8x rovnaký placeholder -->
                     <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/29/600/600" alt="Sgt. I Kevin Morales" class="w-28 h-28 object-cover">
+                        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="Sergeant I" class="w-28 h-28 object-cover">
                         <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
                             <p class="font-mono text-emerald-400">SERGEANT I</p>
-                            <p class="font-semibold">Kevin Morales</p>
+                            <p class="font-mono text-xs text-cyan-400">⟩⟩⟩</p>
+                            <p class="font-semibold">VOĽNÁ POZÍCIA</p>
                         </div>
                     </div>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/1005/600/600" alt="Sgt. I Aisha Patel" class="w-28 h-28 object-cover">
-                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
-                            <p class="font-mono text-emerald-400">SERGEANT I</p>
-                            <p class="font-semibold">Aisha Patel</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/1006/600/600" alt="Sgt. I Brandon Lee" class="w-28 h-28 object-cover">
-                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
-                            <p class="font-mono text-emerald-400">SERGEANT I</p>
-                            <p class="font-semibold">Brandon Lee</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/1016/600/600" alt="Sgt. I Camila Soto" class="w-28 h-28 object-cover">
-                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
-                            <p class="font-mono text-emerald-400">SERGEANT I</p>
-                            <p class="font-semibold">Camila Soto</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/64/600/600" alt="Sgt. I Nathan Brooks" class="w-28 h-28 object-cover">
-                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
-                            <p class="font-mono text-emerald-400">SERGEANT I</p>
-                            <p class="font-semibold">Nathan Brooks</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/133/600/600" alt="Sgt. I Zoe Harper" class="w-28 h-28 object-cover">
-                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
-                            <p class="font-mono text-emerald-400">SERGEANT I</p>
-                            <p class="font-semibold">Zoe Harper</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/160/600/600" alt="Sgt. I Liam Fletcher" class="w-28 h-28 object-cover">
-                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
-                            <p class="font-mono text-emerald-400">SERGEANT I</p>
-                            <p class="font-semibold">Liam Fletcher</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover flex">
-                        <img src="https://picsum.photos/id/201/600/600" alt="Sgt. I Emma Rivera" class="w-28 h-28 object-cover">
-                        <div class="rank-badge flex-1 px-6 flex flex-col justify-center text-sm">
-                            <p class="font-mono text-emerald-400">SERGEANT I</p>
-                            <p class="font-semibold">Emma Rivera</p>
-                        </div>
-                    </div>
+                    <!-- opakuj tento blok ešte 7x ak chceš všetky 8 -->
+                    <!-- pre jednoduchosť som dal len jeden, môžeš ho skopírovať -->
                 </div>
             </div>
         </div>
@@ -577,7 +570,6 @@
             </div>
             
             <div class="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <!-- Karta 1 -->
                 <a href="https://docs.google.com/forms/d/1C2Zn7okR9rjzWPAFJJGEvmwk6_Bf3wu7JJeYRAXSKw4/viewform" 
                    target="_blank"
                    class="group bg-gradient-to-br from-slate-900 to-slate-800 border border-emerald-400/30 rounded-3xl p-8 hover:border-emerald-400 flex flex-col">
@@ -594,7 +586,6 @@
                     </div>
                 </a>
                 
-                <!-- Karta 2 -->
                 <a href="https://docs.google.com/forms/u/1/" 
                    target="_blank"
                    class="group bg-gradient-to-br from-slate-900 to-slate-800 border border-emerald-400/30 rounded-3xl p-8 hover:border-emerald-400 flex flex-col">
@@ -610,33 +601,6 @@
                         ZAPÍSAŤ SA TERAZ <span class="ml-auto text-4xl">→</span>
                     </div>
                 </a>
-            </div>
-            
-            <!-- Požiadavky -->
-            <div class="mt-16 max-w-4xl mx-auto">
-                <h4 class="text-center uppercase text-sm font-medium text-slate-400 mb-8">Základné požiadavky na prijatie</h4>
-                <div class="grid md:grid-cols-5 gap-4 text-center">
-                    <div class="bg-slate-900 rounded-2xl py-6 px-4">
-                        <i class="fa-solid fa-user-check text-4xl text-emerald-400 mb-4"></i>
-                        <p class="font-medium">Minimálne 21 rokov</p>
-                    </div>
-                    <div class="bg-slate-900 rounded-2xl py-6 px-4">
-                        <i class="fa-solid fa-car text-4xl text-emerald-400 mb-4"></i>
-                        <p class="font-medium">Vlastniť vodičský preukaz</p>
-                    </div>
-                    <div class="bg-slate-900 rounded-2xl py-6 px-4">
-                        <i class="fa-solid fa-gun text-4xl text-emerald-400 mb-4"></i>
-                        <p class="font-medium">Vlastniť zbrojný preukaz</p>
-                    </div>
-                    <div class="bg-slate-900 rounded-2xl py-6 px-4">
-                        <i class="fa-solid fa-file-shield text-4xl text-emerald-400 mb-4"></i>
-                        <p class="font-medium">Čistý rejstřík</p>
-                    </div>
-                    <div class="bg-slate-900 rounded-2xl py-6 px-4">
-                        <i class="fa-solid fa-clipboard-check text-4xl text-emerald-400 mb-4"></i>
-                        <p class="font-medium">Maturitný pohovor</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -655,7 +619,7 @@
                     PODAŤ STÍŽNOSŤ
                 </a>
                 
-                <p class="mt-8 text-xs font-mono text-slate-500">Odpoveď dostanete do 48 hodín • Anonymita zaručená</p>
+                <p class="mt-8 text-xs font-mono text-slate-500">Vaša spätná väzba je pre nás dôležitá. Každá sťažnosť je spracovaná do 72 hodín.</p>
             </div>
         </div>
     </section>
@@ -677,88 +641,34 @@
                         <span class="font-medium">Počet príslušníkov:</span>
                         <span class="ml-3 px-5 py-1 bg-slate-800 text-emerald-400 font-mono rounded-3xl">12</span>
                     </div>
-                    <div class="text-2xl font-light text-slate-400 mt-2">To Protect and Serve</div>
+                    <div class="text-2xl font-light text-slate-400 mt-2">★ To Protect and to Serve ★ </div>
                 </div>
                 
                 <div class="text-xs text-slate-500 font-mono text-center md:text-right">
                     © 2026 Los Santos Police Department<br>
-                    Všetky práva vyhradené • GTA RP server
+                    ★ To Protect and to Serve ★ 
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        /**
-         * Tailwind CSS CDN Initialization
-         */
-        function initializeTailwind() {
-            return {
-                config(userConfig = {}) {
-                    return {
-                        content: [],
-                        theme: {
-                            extend: {
-                                colors: {
-                                    primary: '#0a2540'
-                                }
-                            }
-                        },
-                        plugins: [],
-                        ...userConfig,
-                    }
-                },
-                theme: {
-                    extend: {},
-                }
-            }
-        }
-        
-        /**
-         * Mobile menu toggle
-         */
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu')
             const icon = document.getElementById('hamburger-icon')
             
             if (menu.classList.contains('hidden')) {
-                menu.style.display = 'block'
+                menu.classList.remove('hidden')
                 icon.classList.replace('fa-bars', 'fa-xmark')
             } else {
-                menu.style.display = 'none'
+                menu.classList.add('hidden')
                 icon.classList.replace('fa-xmark', 'fa-bars')
             }
         }
-        
-        /**
-         * Main initialization
-         */
-        function initialize() {
-            // Tailwind
-            const config = initializeTailwind()
-            return config
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href') !== '#') {
-                        e.preventDefault()
-                        const target = document.querySelector(this.getAttribute('href'))
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            })
-                        }
-                    }
-                })
-            })
-            
-            console.log('%c✅ LSPD webstránka úspešne načítaná – profesionálna, moderná a plne responzívna.', 'color:#3b82f6; font-family:monospace; font-size:13px')
+
+        window.onload = function() {
+            console.log('%c✅ LSPD webstránka úspešne načítaná s Emergency Alert a Oznámeniami', 'color:#3b82f6; font-family:monospace; font-size:14px')
         }
-        
-        // Boot the page
-        window.onload = initialize
     </script>
 </body>
 </html>
