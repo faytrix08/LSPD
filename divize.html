@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divízie | LSPD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+        
+        :root {
+            --primary-dark: #0a1428;
+            --accent-blue: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            scroll-behavior: smooth;
+        }
+
+        /* Skleněný efekt pro navigaci */
+        .navbar {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Přechod pro pozadí hlavičky */
+        .hero-gradient {
+            background: radial-gradient(circle at top, #112233 0%, #0a1428 100%);
+        }
+
+        /* Animace pro karty divizí */
+        .division-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .division-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .division-card img {
+            transition: transform 0.6s ease;
+        }
+
+        .division-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Custom scrollbar pro moderní vzhled */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a1428;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e2937;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="text-slate-100">
+
+
+
+    <header class="hero-gradient pt-40 pb-20 border-b border-white/5 text-center px-8">
+       <nav class="navbar bg-[#0a1428]/95 fixed top-0 w-full z-50 border-b border-white/5">
+    <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between relative">
+        
+        <div class="flex items-center gap-x-3 z-10">
+            <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" alt="LSPD Logo" class="h-9 w-auto">
+            <div class="hidden sm:block">
+                <span class="text-2xl font-bold tracking-tighter text-white">LSPD</span> <br>
+                <span class=" font-bold tracking-tighter text text-blue-300">Divízie</span>
+            </div>
+        </div>
+
+        <div class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-x-8 text-[13px] font-bold uppercase tracking-wider">
+            
+            <a href="index.html" class="text-slate-200 hover:text-blue-400 transition flex items-center gap-x-2">
+                <i class="fa-solid fa-home text-blue-400/60"></i>
+                Domov
+            </a>
+
+            <a href="divize.html" class="text-white border-b-2 border-blue-500 pb-1 flex items-center gap-x-2">
+                <i class="fa-solid fa-shield-halved"></i>
+                Divízie
+            </a>
+
+            <a href="vedeni.html" class="text-slate-200 hover:text-blue-400 transition flex items-center gap-x-2">
+                <i class="fa-solid fa-user-tie text-blue-400/60"></i>
+                Vedenie
+            </a>
+
+            <a href="index.html#akademia" class="text-slate-200 hover:text-blue-400 transition flex items-center gap-x-2">
+                <i class="fa-solid fa-graduation-cap text-blue-400/60"></i>
+                Akadémia
+            </a>
+
+            <a href="#oznamenia" class="text-slate-400 hover:text-blue-400 transition flex items-center gap-x-2">
+                <i class="fa-solid fa-bullhorn"></i>
+                Oznámenia
+            </a>
+
+            <a href="index.html#stiznosti" class="text-slate-400 hover:text-blue-400 transition flex items-center gap-x-2">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Stížnosti
+            </a>
+
+        </div>
+
+        
+
+        <button class="lg:hidden text-white z-10" onclick="toggleMobileMenu()">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+
+    </div>
+</nav>
+   
+    </header>
+
+    <main class="py-24">
+        <div class="max-w-screen-xl mx-auto px-8 space-y-20">
+
+            <div class="division-card bg-slate-900/40 rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row">
+                <div class="lg:w-2/5 overflow-hidden">
+                    <img src="https://i.ytimg.com/vi/Rx2lMYUHQNY/hqdefault.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0">
+                </div>
+                <div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-400 text-3xl shadow-inner">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-white">METRO</h2>
+                    </div>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Elitná taktická jednotka určená pre vysoko rizikové operácie, záchranu rukojemníkov a elimináciu hrozieb, ktoré presahujú možnosti bežných hliadok. METRO zasahuje tam, kde iní zlyhávajú.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Taktické vybavenie</div>
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Záchrana rukojemníkov</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card bg-slate-900/40 rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row-reverse">
+                <div class="lg:w-2/5 overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXrCMvlDHxeGS9oKXzKqdp_z_M9-_z5e8GrQ&s" class="w-full h-full object-cover">
+                </div>
+                <div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-400 text-3xl shadow-inner">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-white">Detective Bureau</h2>
+                    </div>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Zameriava sa na vyšetrovanie závažnej trestnej činnosti, od vrážd až po organizovaný zločin. Detektívi využívajú forenzné analýzy a prácu v utajení na zhromažďovanie kľúčových dôkazov.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Vyšetrovanie vrážd</div>
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Utajené operácie</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card bg-slate-900/40 rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row">
+                <div class="lg:w-2/5 overflow-hidden">
+                    <img src="https://1a57b9a89f.cbaul-cdnwnd.com/96577f2f3fda72cfe7d51e49bf9aaf98/200000012-bb34fbb352/pasted%20image%200.png?ph=1a57b9a89f" class="w-full h-full object-cover">
+                </div>
+                <div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-400 text-3xl shadow-inner">
+                            <i class="fa-solid fa-helicopter"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-white">Air Support</h2>
+                    </div>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Letecký dohľad zaisťuje prehľad nad celým Los Santos. Pomocou moderných senzorov a termovízie koordinujú prenasledovania a hľadajú nezvestné osoby v náročnom teréne.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Termovízia</div>
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Letecká koordinácia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card bg-slate-900/40 rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row-reverse">
+                <div class="lg:w-2/5 overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ8Gahff_1Bopk_t5xCIo-f1DfOoXInYN8Jw&s" class="w-full h-full object-cover">
+                </div>
+                <div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-400 text-3xl shadow-inner">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-white">Motorbike Unit</h2>
+                    </div>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Rýchla a obratná jednotka určená pre hustú mestskú premávku. Ich primárnou úlohou je dohľad nad bezpečnosťou cestnej premávky a rýchle zásahy tam, kde bežné vozidlo neprejde.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Dopravná kontrola</div>
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Rýchla reakcia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card bg-slate-900/40 rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row">
+                <div class="lg:w-2/5 overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4WnSnZpSyfy9BibnykN9vFe75oT1Ia7hm2Q&s" class="w-full h-full object-cover">
+                </div>
+                <div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-400 text-3xl shadow-inner">
+                            <i class="fa-solid fa-dog"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-white">K-9 Unit</h2>
+                    </div>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Jednotka psovodov využíva špeciálne vycvičené psy na detekciu drog, výbušnín a na stopovanie podozrivých osôb. Puto medzi psovodom a psom je základom úspechu tejto divízie.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Detekcia omamných látok</div>
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Pátracia činnosť</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card bg-slate-900/40 rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row-reverse shadow-2xl shadow-red-900/5">
+                <div class="lg:w-2/5 overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkwTIXSeRavBzHiJFU_3yAtwk4FvLpx5IwpQ&s" class="w-full h-full object-cover">
+                </div>
+                <div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-14 h-14 bg-red-600/20 rounded-2xl flex items-center justify-center text-red-400 text-3xl shadow-inner">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-white">Field Medic</h2>
+                    </div>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Špeciálne vyškolení príslušníci, ktorí poskytujú neodkladnú lekársku starostlivosť priamo v teréne. Ich úlohou je stabilizovať ranených v kritických situáciách pred príchodom EMS.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-red-500"></i> Bojová medicína</div>
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-red-500"></i> Stabilizácia osôb</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card bg-slate-900/40 rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row">
+                <div class="lg:w-2/5 overflow-hidden">
+                    <img src="https://i.ytimg.com/vi/hM8A1WYsVQo/hqdefault.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-400 text-3xl shadow-inner">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-white">Field Training Officer</h2>
+                    </div>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Skúsení mentori zodpovední za výcvik nových kadetov. FTO zabezpečuje, aby každý nový dôstojník ovládal protokoly a zákonné postupy v reálnych podmienkach služby.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Mentoring kadetov</div>
+                        <div class="flex items-center gap-x-3 text-slate-200"><i class="fa-solid fa-check text-blue-500"></i> Dohľad nad službou</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black border-t border-slate-800 py-16">
+        <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-x-4">
+                <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png/revision/latest?cb=20201021000555" alt="LSPD Logo" class="h-12 opacity-80">
+                <div class="text-2xl font-bold text-slate-400">LSPD</div>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-sm font-mono text-slate-500 uppercase tracking-widest mb-2">To Protect and Serve</p>
+                <p class="text-xs text-slate-600">© 2026 Los Santos Police Department • GTA RP Fan Site</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
