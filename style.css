@@ -1148,3 +1148,202 @@ html {
 .status-closed .mini-dot {
     background-color: #ef4444 !important;
 }
+
+/* --- MISSION & VALUES STYLES --- */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 40px !important;
+    padding: 50px 40px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card:hover {
+    transform: translateY(-15px);
+    background: rgba(59, 130, 246, 0.03);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 25px;
+    transition: 0.4s ease;
+}
+
+.value-card:hover .value-icon {
+    background: var(--accent);
+    color: white;
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.value-name {
+    color: #ffffff !important;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.value-text {
+    color: #94a3b8 !important;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.value-line {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto;
+    border-radius: 2px;
+    transition: 0.4s ease;
+}
+
+.value-card:hover .value-line {
+    width: 80px;
+    background: var(--aqua);
+    box-shadow: 0 0 10px var(--aqua);
+}
+
+/* RESPONZIVITA */
+@media (max-width: 1024px) {
+    .values-grid { grid-template-columns: 1fr; gap: 20px; }
+    .value-card { padding: 40px 30px; }
+}
+
+
+/* --- MISSION PARAGRAPH STYLES --- */
+
+/* --- MISSION MEGA CARD STYLES --- */
+
+.mission-mega-card {
+    background: linear-gradient(160deg, #0f172a 0%, #0a1428 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 50px !important;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.mission-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.mission-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mission-badge {
+    color: var(--accent);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 8px 20px;
+    border-radius: 12px;
+}
+
+.mission-icon-top {
+    font-size: 2.5rem;
+    color: rgba(59, 130, 246, 0.2);
+}
+
+.mission-heading {
+    color: #ffffff !important;
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.mission-main-text {
+    color: #cbd5e1 !important;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-weight: 400;
+    max-width: 90%;
+}
+
+.mission-footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+}
+
+.mission-signature {
+    display: flex;
+    flex-direction: column;
+}
+
+.sig-name {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.sig-rank {
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.mission-seal {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.03);
+}
+
+/* Dekorativní záře na pozadí */
+.mission-bg-glow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .mission-mega-card { padding: 40px 30px; }
+    .mission-heading { font-size: 1.8rem; }
+    .mission-main-text { font-size: 1.1rem; max-width: 100%; }
+}
