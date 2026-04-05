@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSPD | Oznámenia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a1428]">
+
+    <header class="navbar bg-[#0a1428]/95 border-b border-slate-700 sticky top-0 z-50 backdrop-blur-xl">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between gap-x-12">
+            <div class="flex items-center gap-x-3 shrink-0">
+                <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" alt="LSPD Logo" class="h-12 w-auto">
+                <div>
+                    <h1 class="text-3xl font-bold tracking-tighter text-white" style="margin-bottom: 0;">LSPD</h1>
+                    <p class="text-[10px] text-blue-400 font-mono tracking-widest uppercase" style="margin-top: -4px;">Oznámenia</p>
+                </div>
+            </div>
+
+            <nav class="hidden lg:flex items-center gap-x-8 text-sm font-medium text-white">
+                <a href="index.html" class="nav-link hover:text-blue-400 transition flex items-center gap-x-2">
+                    <i class="fa-solid fa-house"></i> Domov
+                </a>
+                <a href="divize.html" class="nav-link hover:text-blue-400 transition flex items-center gap-x-2">
+                    <i class="fa-solid fa-shield-halved"></i> Divízie
+                </a>
+                <a href="vedeni.html" class="nav-link hover:text-blue-400 transition flex items-center gap-x-2">
+                    <i class="fa-solid fa-user-tie"></i> Vedenie
+                </a>
+                <a href="academy.html" class="nav-link hover:text-blue-400 transition flex items-center gap-x-2">
+                    <i class="fa-solid fa-graduation-cap"></i> Akadémia
+                </a>
+                <a href="oznameni.html" class="active-link flex items-center gap-x-2">
+                    <i class="fa-solid fa-bullhorn"></i> Oznámenia
+                </a>
+            </nav>
+
+            <div class="shrink-0">
+                <a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/edit?chromeless=1" class="bg-white flex items-center gap-x-2 px-6 py-2.5 rounded-xl font-bold text-[#0a1428] text-sm transition-all hover:bg-red-600 hover:text-white">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Podať sťažnosť
+                </a>
+            </div>
+        </div>
+    </header>
+
+ <main class="main-content max-w-screen-2xl mx-auto px-8 py-12">
+    <div class="news-card-wrapper">
+    <input type="checkbox" id="news-1" class="news-toggle hidden">
+
+    <div class="news-main-card">
+        <div class="card-header">
+            <span class="news-badge">Tlačová správa</span>
+            <span class="news-date">05. APRÍL 2026</span>
+        </div>
+
+        <h2 class="card-title">Nový Chief of Police</h2>
+
+        <p class="card-text">
+           Chief Garry Hutchinson byl nahrazen Chiefem Johnem Davidsonem
+        </p>
+
+        <div class="expandable-content">
+            <div class="content-divider"></div>
+            <p class="card-text">
+                Jelikož Chief Hutchinson odchází do důchodu, starosta byl donucen vybrat nového chiefa, po dlouhém rozhodování se rozhodl pro Commandera John Davidsona. Gratulujeme novému chiefovi a hodně štěstí panu Hutchinsonovi
+            </p>
+        </div>
+
+        <label for="news-1" class="read-more-btn">
+            <span class="show-text">Zobraziť celý článok <i class="fa-solid fa-chevron-down ml-2"></i></span>
+            <span class="hide-text">Zatvoriť článok <i class="fa-solid fa-chevron-up ml-2"></i></span>
+        </label>
+    </div>
+
+    <div class="card-image-side">
+        <img src="https://i.imgur.com/866XpPZ.jpg" alt="News Image">
+        <div class="image-gradient"></div>
+    </div>
+</div>
+</main>
+    <footer class="main-footer">
+    <div class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" alt="LSPD Logo" class="h-10 w-auto opacity-80">
+                    <h2 class="text-2xl font-black tracking-tighter text-white">LSPD</h2>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    Oficiálny portál Departmentu polície Los Santos. Chránime bezpečnosť a poriadok v uliciach nášho mesta 24/7.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Navigácia</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Hlavná stránka</a></li>
+                    <li><a href="divize.html">Divízie sboru</a></li>
+                    <li><a href="vedeni.html">Vedenie LSPD</a></li>
+                    <li><a href="academy.html">Policajná akadémia</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Podpora</h4>
+                <ul class="footer-links">
+                    <li><a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/edit?chromeless=1">Sťažnosti na dôstojníkov</a></li>
+                    <li><a href="#">Trestný zákonník</a></li>
+                    <li><a href="#">Povolenia na zbrane</a></li>
+                    <li><a href="#">Najčastejšie otázky</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Sídlo</h4>
+                <p class="text-slate-500 text-sm mb-4">
+                    Mission Row Police Station<br>
+                    Sinner St, Los Santos
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="footer-social-icon"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-600 text-xs font-medium uppercase tracking-widest">
+                  To Protect and Serve
+            </p>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-600 hover:text-white text-[10px] uppercase font-bold tracking-tighter transition-colors">Privacy Policy</a>
+                <a href="#" class="text-slate-600 hover:text-white text-[10px] uppercase font-bold tracking-tighter transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

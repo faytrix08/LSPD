@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSPD | Akadémia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a1428]">
+
+    <header class="navbar bg-[#0a1428]/95 border-b border-slate-700 sticky top-0 z-50 backdrop-blur-xl">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" alt="LSPD Logo" class="h-12 w-auto">
+                <div>
+                    <h1 class="text-3xl font-bold tracking-tighter text-white">LSPD</h1>
+                    <p class="text-[10px] text-blue-400 font-mono tracking-widest -mt-1 uppercase">Akadémia</p>
+                </div>
+            </div>
+
+            <nav class="hidden lg:flex items-center gap-x-8 text-sm font-medium text-white">
+                <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Domov</a>
+                <a href="divize.html" class="nav-link"><i class="fa-solid fa-shield-halved"></i> Divízie</a>
+                <a href="vedeni.html" class="nav-link"><i class="fa-solid fa-user-tie"></i> Vedenie</a>
+                <a href="academy.html" class="nav-link active-link"><i class="fa-solid fa-graduation-cap"></i> Akadémia</a>
+                <a href="news.html" class="nav-link"><i class="fa-solid fa-bullhorn"></i> Oznámenia</a>
+            </nav>
+
+            <div class="flex items-center gap-x-4">
+                <a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/edit?chromeless=1" class="px-6 py-2.5 bg-white text-[#0a1428] hover:bg-red-600 hover:text-white font-semibold text-sm rounded-xl transition-all flex items-center gap-x-2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Podať sťažnosť
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content max-w-screen-xl mx-auto px-8 py-12">
+    
+    <div class="mb-12">
+        <div class="recruitment-status-card status-open min-h-[200px] !py-10"> <div class="card-overlay"></div>
+            <div class="relative z-10 flex flex-col items-center text-center">
+                <div class="flex items-center gap-4 mb-4">
+                    
+                    <div class="pulse-container"><div class="pulse-dot"></div></div>
+                </div>
+                <h3 class="status-main-text text-5xl">Nábor Otvorený</h3>
+                <div class="status-line mx-auto"></div>
+                <p class="text-slate-400 text-sm mt-4 italic">
+                    Systém prijíma nové žiadosti. Vyberte si príslušnú kategóriu nižšie.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        
+        <div class="academy-card group flex flex-col justify-between">
+            <div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="req-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    <h3 class="text-white text-2xl font-black italic uppercase tracking-tighter">Nováčikovia</h3>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                    Pre uchádzačov bez predošlej skúsenosti. Zahŕňa kompletnú teoretickú prípravu a praktický tréning v teréne pod dohľadom FTO.
+                </p>
+            </div>
+            
+            <div class="mt-auto">
+                <a href="https://docs.google.com/forms/d/1C2Zn7okR9rjzWPAFJJGEvmwk6_Bf3wu7JJeYRAXSKw4/edit?usp=drivesdk&ouid=115354356751466985968&chromeless=1" class="apply-action-btn w-full !py-4 !text-sm">
+                    Prihláška do akadémie <i class="fa-solid fa-graduation-cap ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="academy-card transfer-panel group flex flex-col justify-between border-l-4 border-l-cyan-500">
+            <div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="icon-box-premium w-12 h-12 !bg-cyan-500/10 !border-cyan-500/20">
+                        <i class="fa-solid fa-id-badge text-2xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-white text-2xl font-black italic uppercase tracking-tighter text-cyan-400">Skúsení</h3>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                    Máte skúsenosti z iných zložiek? Ponúkame zrýchlený proces prijatia, individuálne preskúšanie a okamžité zaradenie do služby.
+                </p>
+            </div>
+
+            <div class="mt-auto">
+                <a href="https://docs.google.com/forms/d/1erajwze-w1krp5n-JNJu0yvWvoEc6Jif-6rMB8pdnDc/edit?chromeless=1" class="apply-action-btn w-full !py-4 !text-sm !bg-cyan-500 !text-black hover:!bg-white hover:!text-black">
+                    Žiadosť o transfer <i class="fa-solid fa-right-to-bracket ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="big-address-card !py-10">
+        <span class="section-label mb-8 block">Minimálne požiadavky</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="req-item">
+                <div class="req-icon"><i class="fa-solid fa-id-card"></i></div>
+                <div class="req-text">Vek 21+ rokov</div>
+            </div>
+            <div class="req-item">
+                <div class="req-icon"><i class="fa-solid fa-car-side"></i></div>
+                <div class="req-text">Vodičský preukaz B</div>
+            </div>
+            <div class="req-item">
+                <div class="req-icon"><i class="fa-solid fa-gavel"></i></div>
+                <div class="req-text">Čistý register trestov</div>
+            </div>
+            <div class="req-item">
+                <div class="req-icon"><i class="fa-solid fa-gun"></i></div>
+                <div class="req-text">Zbrojný preukaz (pouze výhoda)</div>
+            </div>
+            <div class="req-item">
+                <div class="req-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="req-text">Matúrita</div>
+            </div>
+            <div class="req-item">
+                <div class="req-icon"><i class="fa-solid fa-person"></i></div>
+                <div class="req-text">Občanstvo USA</div>
+            </div>
+        
+        
+        
+        
+        
+        </div>
+    </div>
+
+</main>
+
+  <footer class="main-footer">
+    <div class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" alt="LSPD Logo" class="h-10 w-auto opacity-80">
+                    <h2 class="text-2xl font-black tracking-tighter text-white">LSPD</h2>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    Oficiálny portál Departmentu polície Los Santos. Chránime bezpečnosť a poriadok v uliciach nášho mesta 24/7.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Navigácia</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Hlavná stránka</a></li>
+                    <li><a href="divize.html">Divízie sboru</a></li>
+                    <li><a href="vedeni.html">Vedenie LSPD</a></li>
+                    <li><a href="academy.html">Policajná akadémia</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Podpora</h4>
+                <ul class="footer-links">
+                    <li><a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/edit?chromeless=1">Sťažnosti na dôstojníkov</a></li>
+                    <li><a href="#">Trestný zákonník</a></li>
+                    <li><a href="#">Povolenia na zbrane</a></li>
+                    <li><a href="#">Najčastejšie otázky</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Sídlo</h4>
+                <p class="text-slate-500 text-sm mb-4">
+                    Mission Row Police Station<br>
+                    Sinner St, Los Santos
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="footer-social-icon"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-600 text-xs font-medium uppercase tracking-widest">
+                 To Protect and Serve
+            </p>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-600 hover:text-white text-[10px] uppercase font-bold tracking-tighter transition-colors">Privacy Policy</a>
+                <a href="#" class="text-slate-600 hover:text-white text-[10px] uppercase font-bold tracking-tighter transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
