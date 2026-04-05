@@ -849,11 +849,11 @@ html {
 
 /* --- EMERGENCY BROADCAST BAR --- */
 
-.emergency-wrapper{
+.emergency-wrapper {
     width: 100%;
     position: relative;
     z-index: 999; /* Aby byl nad vším ostatním */
-
+}
 /*.emergency-wrapper {
     display: none !important;
 }
@@ -967,4 +967,9 @@ html {
     .emergency-bar { padding: 15px 20px; }
     .alert-main-text { font-size: 0.85rem; }
     .alert-blink-icon { display: none; } /* Na mobilu schováme ikonu pro víc místa */
-}}
+}
+
+/* Když je checkbox zaškrtnutý, následující prvek .emergency-bar zmizí */
+.alert-hide-check:checked + .emergency-bar {
+    display: none;
+}
