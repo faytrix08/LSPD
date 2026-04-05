@@ -852,7 +852,7 @@ html {
 /*.emergency-wrapper{
     width: 100%;
     position: relative;
-    z-index: 999; /* Aby byl nad vším ostatním }*/
+    z-index: 999;} /* Aby byl nad vším ostatním */
 .emergency-wrapper {
     display: none !important;
 }
