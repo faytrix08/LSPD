@@ -846,3 +846,125 @@ html {
     .card-image-side { height: 250px; order: -1; }
     .image-gradient { background: linear-gradient(0deg, #0f172a 0%, transparent 100%); }
 }
+
+/* --- EMERGENCY BROADCAST BAR --- */
+
+/*.emergency-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 999; /* Aby byl nad vším ostatním */
+
+.emergency-wrapper {
+    display: none !important;
+}
+
+/* Skrytí checkboxu */
+.alert-hide-check {
+    display: none;
+}
+
+/* Logika zavření */
+.alert-hide-check:checked + .emergency-bar {
+    display: none;
+}
+
+.emergency-bar {
+    background: #450a0a; /* Velmi tmavě červená */
+    border-bottom: 2px solid #ef4444;
+    padding: 15px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.alert-pulse-bg {
+    position: absolute;
+    inset: 0;
+    background: #ef4444;
+    opacity: 0.05;
+    animation: alert-pulse-anim 2s infinite ease-in-out;
+}
+
+.alert-inner {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.alert-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.alert-blink-icon {
+    width: 40px;
+    height: 40px;
+    background: #ef4444;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+    animation: alert-icon-blink 1s infinite alternate;
+}
+
+.alert-text-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.alert-tag {
+    color: #fca5a5;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+.alert-main-text {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 !important;
+    text-transform: uppercase;
+}
+
+.alert-close-btn {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.alert-close-btn:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* --- ANIMACE --- */
+
+@keyframes alert-pulse-anim {
+    0% { opacity: 0.05; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0.05; }
+}
+
+@keyframes alert-icon-blink {
+    from { transform: scale(1); box-shadow: 0 0 10px rgba(239, 68, 68, 0.4); }
+    to { transform: scale(1.1); box-shadow: 0 0 25px rgba(239, 68, 68, 0.8); }
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .emergency-bar { padding: 15px 20px; }
+    .alert-main-text { font-size: 0.85rem; }
+    .alert-blink-icon { display: none; } /* Na mobilu schováme ikonu pro víc místa */
+}
