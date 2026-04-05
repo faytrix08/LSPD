@@ -60,62 +60,43 @@
 
     <main class="main-content max-w-screen-xl mx-auto px-8 py-12">
     
-    <div class="mb-12">
-        <div class="recruitment-status-card status-open min-h-[200px] !py-10"> <div class="card-overlay"></div>
-            <div class="relative z-10 flex flex-col items-center text-center">
-                <div class="flex items-center gap-4 mb-4">
-                    
-                    <div class="pulse-container"><div class="pulse-dot"></div></div>
+<div class="recruitment-flex-row">
+    
+    <div class="recruitment-mini-card status-open">
+        <div class="mini-card-content">
+            <div class="mini-card-header">
+                <div class="mini-icon-circle"><i class="fa-solid fa-user-plus"></i></div>
+                <div class="mini-status-badge">
+                    <span class="mini-dot"></span>
+                    <span class="mini-status-text">Otvorené</span>
                 </div>
-                <h3 class="status-main-text text-5xl">Nábor Otvorený</h3>
-                <div class="status-line mx-auto"></div>
-                <p class="text-slate-400 text-sm mt-4 italic">
-                    Systém prijíma nové žiadosti. Vyberte si príslušnú kategóriu nižšie.
-                </p>
             </div>
+            <h3 class="mini-card-title">Civilný nábor</h3>
+            <p class="mini-card-desc">Určené pre občanov bez predchádzajúcich skúseností v zložkách.</p>
+            <a href="https://docs.google.com/forms/d/1C2Zn7okR9rjzWPAFJJGEvmwk6_Bf3wu7JJeYRAXSKw4/edit?usp=drivesdk&ouid=115354356751466985968&chromeless=1" class="mini-apply-btn">Podať prihlášku</a>
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        
-        <div class="academy-card group flex flex-col justify-between">
-            <div>
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="req-icon"><i class="fa-solid fa-user-plus"></i></div>
-                    <h3 class="text-white text-2xl font-black italic uppercase tracking-tighter">Nováčikovia</h3>
+    <div class="recruitment-mini-card status-open">
+        <div class="mini-card-content">
+            <div class="mini-card-header">
+                <div class="mini-icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="mini-status-badge">
+                    <span class="mini-dot"></span>
+                    <span class="mini-status-text">Otvorené</span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                    Pre uchádzačov bez predošlej skúsenosti. Zahŕňa kompletnú teoretickú prípravu a praktický tréning v teréne pod dohľadom FTO.
-                </p>
             </div>
-            
-            <div class="mt-auto">
-                <a href="https://docs.google.com/forms/d/1C2Zn7okR9rjzWPAFJJGEvmwk6_Bf3wu7JJeYRAXSKw4/edit?usp=drivesdk&ouid=115354356751466985968&chromeless=1" class="apply-action-btn w-full !py-4 !text-sm">
-                    Prihláška do akadémie <i class="fa-solid fa-graduation-cap ml-2"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="academy-card transfer-panel group flex flex-col justify-between border-l-4 border-l-cyan-500">
-            <div>
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="icon-box-premium w-12 h-12 !bg-cyan-500/10 !border-cyan-500/20">
-                        <i class="fa-solid fa-id-badge text-2xl text-cyan-400"></i>
-                    </div>
-                    <h3 class="text-white text-2xl font-black italic uppercase tracking-tighter text-cyan-400">Skúsení</h3>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                    Máte skúsenosti z iných zložiek? Ponúkame zrýchlený proces prijatia, individuálne preskúšanie a okamžité zaradenie do služby.
-                </p>
-            </div>
-
-            <div class="mt-auto">
-                <a href="https://docs.google.com/forms/d/1erajwze-w1krp5n-JNJu0yvWvoEc6Jif-6rMB8pdnDc/edit?chromeless=1" class="apply-action-btn w-full !py-4 !text-sm !bg-cyan-500 !text-black hover:!bg-white hover:!text-black">
-                    Žiadosť o transfer <i class="fa-solid fa-right-to-bracket ml-2"></i>
-                </a>
-            </div>
+            <h3 class="mini-card-title">Policejný transfer</h3>
+            <p class="mini-card-desc">Pre aktívnych príslušníkov iných zborov so záujmom o prestup.</p>
+            <a href="https://docs.google.com/forms/d/1erajwze-w1krp5n-JNJu0yvWvoEc6Jif-6rMB8pdnDc/edit?chromeless=1" class="mini-apply-btn">Podať prihlášku (Transfer)</a>
         </div>
     </div>
+
+</div>
+
+</div>
+
+</div>
 
     <div class="big-address-card !py-10">
         <span class="section-label mb-8 block">Minimálne požiadavky</span>
@@ -138,7 +119,7 @@
             </div>
             <div class="req-item">
                 <div class="req-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <div class="req-text">Matúrita</div>
+                <div class="req-text">Maturita</div>
             </div>
             <div class="req-item">
                 <div class="req-icon"><i class="fa-solid fa-person"></i></div>
@@ -182,7 +163,7 @@
                 <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Podpora</h4>
                 <ul class="footer-links">
                     <li><a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/edit?chromeless=1">Sťažnosti na dôstojníkov</a></li>
-                    <li><a href="#">Trestný zákonník</a></li>
+                    <li><a href="https://discord.gg/twQmHkRu5R">Trestný zákonník</a></li>
                     <li><a href="#">Povolenia na zbrane</a></li>
                     <li><a href="#">Najčastejšie otázky</a></li>
                 </ul>
