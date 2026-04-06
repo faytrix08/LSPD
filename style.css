@@ -849,7 +849,7 @@ html {
 
 /* --- EMERGENCY BROADCAST BAR --- */
 
-.emergency-wrapper{
+/*.emergency-wrapper{
     width: 100%;
     position: relative;
     z-index: 999;}  *//* Aby byl nad vším ostatním */
