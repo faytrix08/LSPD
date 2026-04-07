@@ -16,7 +16,7 @@
 .section-title-box {
     text-align: center;
     margin-bottom: 3rem;
-}
+    }
 .section-label {
     color: var(--accent);
     font-family: 'Roboto Mono', monospace;
@@ -24,6 +24,10 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
+    /* ... tvoje stávající věci ... */
+    display: block !important; /* Důležité, aby margin fungoval */
+    margin-bottom: 15px !important; /* Tohle vytvoří mezeru pod nápisem LOKÁCIE */
+
 }
 .section-title {
     color: white;
@@ -32,6 +36,17 @@
     margin-top: 10px;
 }
 
+/* Toto opraví mezeru u LOKÁCIE a KRONIKA */
+.section-title-box .section-label {
+    display: block !important;
+    margin-bottom: 25px !important; /* Tady si nastav mezeru, jakou chceš */
+}
+
+/* Toto zajistí, aby štítky UVNITŘ karet (jako Administratíva) zůstaly v pořádku */
+.big-address-card .section-label {
+    display: inline-block !important;
+    margin-bottom: 10px !important;
+}
 /* --- ADRESOVÉ KARTY --- */
 .big-address-card {
     background: rgba(255, 255, 255, 0.03);
@@ -41,6 +56,11 @@
     text-align: center;
     transition: 0.4s ease;
     color: white;
+/* ... tvoje stávající věci ... */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 800px; /* Nastav šířku, aby nebyla přes celou obrazovku */
+
 }
 .big-address-card:hover {
     transform: translateY(-10px);
@@ -1364,4 +1384,5 @@ html {
 .premium-mission-section {
     background: transparent !important; /* Pokud chceš vidět jen pozadí celého webu */
 }
+
 
