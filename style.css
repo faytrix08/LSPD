@@ -59,9 +59,29 @@
 /* ... tvoje stávající věci ... */
     margin-left: auto !important;
     margin-right: auto !important;
-    max-width: 800px; /* Nastav šířku, aby nebyla přes celou obrazovku */
-
+    max-width: 1200px; /* Nastav šířku, aby nebyla přes celou obrazovku */
+    margin-top: 50px;
+    
 }
+
+.big-address-card1 {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    padding: 60px 40px;
+    border-radius: 40px !important; 
+    text-align: center;
+    transition: 0.4s ease;
+    color: white;
+/* ... tvoje stávající věci ... */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 1200px; /* Nastav šířku, aby nebyla přes celou obrazovku */
+    
+    margin-bottom: 50px;
+}
+
+
+
 .big-address-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
