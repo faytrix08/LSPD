@@ -13,6 +13,18 @@
   .alert-hide-check, input[type="checkbox"] {
     display: none !important;
   }
+
+    .btn-aca { display: flex; align-items: center; justify-content: center; background: #3b82f6; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 12px; height: 60px; width: 100%; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; font-size: 14px; gap: 10px; }
+    .btn-aca:hover { background: #2563eb; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(59,130,246,0.4); }
+    .btn-aca.disabled { background: #2a3a4a !important; color: #576574 !important; cursor: not-allowed !important; pointer-events: none !important; transform: none !important; box-shadow: none !important; border: 1px solid rgba(255,255,255,0.05); }
+    .mini-card-btn { display: flex; align-items: center; justify-content: center; background: #3b82f6; color: #fff; font-weight: 800; text-transform: uppercase; border-radius: 10px; height: 45px; width: 100%; text-decoration: none; transition: all 0.3s; font-size: 13px; }
+    .mini-card-btn:hover { background: #2563eb; transform: translateY(-2px); }
+/* TADY JE TEN AUTOMATICKÝ ZÁMEK */
+    .status-closed .mini-card-btn { background: #2a3a4a !important; color: #576574 !important; pointer-events: none !important; cursor: not-allowed !important; transform: none !important; box-shadow: none !important; }
+/* Volitelně: zčervenání tečky a textu v headeru, když je closed */
+    .status-closed .mini-dot { background: #ef4444; }
+    .status-closed .mini-status-text { color: #ef4444; }
+
 </style>
 </head>
 <body class="bg-[#0a1428]">
@@ -110,7 +122,7 @@
             </div>
             <h3 class="mini-card-title">Civilní nábor</h3>
             <p class="mini-card-desc">Určeno pro občany bez předchozích zkušeností v bezpečnostních složkách.</p>
-            <a href="https://docs.google.com/forms/d/1C2Zn7okR9rjzWPAFJJGEvmwk6_Bf3wu7JJeYRAXSKw4/edit?usp=drivesdk&ouid=115354356751466985968&chromeless=1" class="mini-apply-btn">Podat přihlášku</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8PkhQAgsAFA_9jeIJ60VFg0k3Y6_y2woV9KK_odZ_cDwg6Q/viewform?usp=dialog" class="mini-card-btn">Odeslat přihlášku</a>
         </div>
     </div>
 
@@ -125,7 +137,9 @@
             </div>
             <h3 class="mini-card-title">Policejní transfer</h3>
             <p class="mini-card-desc">Pro aktivní příslušníky jiných sborů se zájmem o přestup k LSPD.</p>
-            <a href="https://docs.google.com/forms/d/1erajwze-w1krp5n-JNJu0yvWvoEc6Jif-6rMB8pdnDc/edit?chromeless=1" class="mini-apply-btn">Podat přihlášku (Transfer)</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSwsR0RY7hvR1oVAQgV0oMVDDzqEyqUZD5G6RPTfzHWfPNFA/viewform?usp=dialog" class="mini-card-btn">Odeslat přihlášku</a>
+        </div>
+        </div>
         </div>
     </div>
 
@@ -152,7 +166,7 @@
             </div>
             <div class="req-item">
                 <div class="req-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <div class="req-text">Ukončené středoškolské vzdělání</div>
+                <div class="req-text">Maturita</div>
             </div>
             <div class="req-item">
                 <div class="req-icon"><i class="fa-solid fa-person"></i></div>

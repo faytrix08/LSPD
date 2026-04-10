@@ -39,7 +39,15 @@
         .vacant { opacity: 0.35; font-style: italic;}
         .vacant2 { opacity: 0.35; }
         .insignia { color: #00ffff; padding: 5px; font-family: 'Roboto Mono', monospace; }
-
+        .contact-big { display: flex; align-items: center; background: linear-gradient(90deg, #1e2f44 0%, #25374d 100%); border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 16px; overflow: hidden; width: 100%; height: 120px; transition: all 0.3s ease; text-decoration: none; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .contact-big:hover { transform: translateY(-3px); border-color: #3b82f6; box-shadow: 0 8px 25px rgba(59,130,246,0.2); }
+        .contact-big-img { width: 120px; height: 120px; flex-shrink: 0; background: #2a3a4a; overflow: hidden; border-right: 1px solid rgba(255,255,255,0.05); }
+        .contact-big-img img { width: 100%; height: 100%; object-fit: cover; }
+        .contact-big-body { padding: 0 30px; display: flex; flex-direction: column; justify-content: center; flex-grow: 1; }
+        .contact-big-title { color: #fff; font-size: 20px; font-weight: 900; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
+        .contact-big-subtitle { color: #3b82f6; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+        .contact-big-arrow { padding-right: 30px; color: #3b82f6; font-size: 24px; opacity: 0.5; transition: 0.3s; }
+        .contact-big:hover .contact-big-arrow { opacity: 1; transform: translateX(5px); }
         @media (max-width: 1100px) { 
             .grid-4, .grid-1 { grid-template-columns: 1fr 1fr; } 
             .grid-3, .grid-2 { grid-template-columns: 1fr; } 
@@ -113,6 +121,20 @@
 </header>
 
 <main class="main-content">
+    
+    <span class="section-title">Kontakt </span>
+    <a href="tvoje_stranka.html" class="contact-big">
+    <div class="contact-big-img">
+        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" alt="LSPD Logo">
+    </div>
+    <div class="contact-big-body">
+        <span class="contact-big-subtitle">Kontakt na vedení</span>
+        <h4 class="contact-big-title">Kontakt na vedení Los Santos Police Department</h4>
+    </div>
+    <div class="contact-big-arrow">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+    </div>
+</a>
     <span class="section-title">High Command</span>
     <div class="grid-4">
         <div class="card card-vertical">
