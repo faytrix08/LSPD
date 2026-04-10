@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LSPD Roster | High Command</title>
+    <title>LSPD Roster | Vedení sboru</title>
+    <link rel="icon" type="image/png" href="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css"> 
     <style>
-        /* TVÉ PŮVODNÍ STYLY - Nedotčeno */
         body { 
             background-color: #0a1428; 
             color: white; 
             font-family: 'Segoe UI', Roboto, sans-serif; 
-            margin: 1; 
+            margin: 0; 
         }
 
         .main-content { max-width: 1400px; margin: 0 auto; padding: 40px; }
@@ -24,23 +24,39 @@
         .grid-3 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 70px; max-width: 800px; margin: 0 auto 70px auto; }
         .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 70px; max-width: 800px; margin: 0 auto 70px auto; }
         .grid-1 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 70px; }
+        .grid-5 { display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; margin-bottom: 70px; }
+
 
         .card { background: #1e2f44; border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; overflow: hidden; display: flex; transition: transform 0.3s ease; }
         .card:hover { transform: translateY(-5px); }
         .card-vertical { flex-direction: column; text-align: center; }
-        .card-vertical2 { flex-direction: line; text-align: center; height: auto; } /* ZPĚT TVÁ VERZE */
-        .photo { background: #2a3a4a; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
-        .photo i { color: #1a2635; font-size: 50px; }
-        .photo img { width: 100%; height: 100%; object-fit: cover; }
+        .card-vertical2 { flex-direction: line; text-align: center; height:120px; }
+        .photo { background: #2a3a4a; display:flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+        
+        .photo img { width:100%; height: 100%; object-fit: cover; }
         .info { padding: 25px 15px; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
         .name { font-size: 19px; font-weight: 800; text-transform: uppercase; margin: 0; color: white; }
         .vacant { opacity: 0.35; font-style: italic;}
+        .vacant2 { opacity: 0.35; }
         .insignia { color: #00ffff; padding: 5px; font-family: 'Roboto Mono', monospace; }
-
+        .contact-big { display: flex; align-items: center; background: linear-gradient(90deg, #1e2f44 0%, #25374d 100%); border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 16px; overflow: hidden; width: 100%; height: 120px; transition: all 0.3s ease; text-decoration: none; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .contact-big:hover { transform: translateY(-3px); border-color: #3b82f6; box-shadow: 0 8px 25px rgba(59,130,246,0.2); }
+        .contact-big-img { width: 120px; height: 120px; flex-shrink: 0; background: #2a3a4a; overflow: hidden; border-right: 1px solid rgba(255,255,255,0.05); }
+        .contact-big-img img { width: 100%; height: 100%; object-fit: cover; }
+        .contact-big-body { padding: 0 30px; display: flex; flex-direction: column; justify-content: center; flex-grow: 1; }
+        .contact-big-title { color: #fff; font-size: 20px; font-weight: 900; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
+        .contact-big-subtitle { color: #3b82f6; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+        .contact-big-arrow { padding-right: 30px; color: #3b82f6; font-size: 24px; opacity: 0.5; transition: 0.3s; }
+        .contact-big:hover .contact-big-arrow { opacity: 1; transform: translateX(5px); }
         @media (max-width: 1100px) { 
             .grid-4, .grid-1 { grid-template-columns: 1fr 1fr; } 
             .grid-3, .grid-2 { grid-template-columns: 1fr; } 
         }
+    
+  /* Skrytí zaškrtávacího políčka alertu */
+  .alert-hide-check, input[type="checkbox"] {
+    display: none !important;
+  }
     </style>
 </head>
 <body>
@@ -73,69 +89,83 @@
     <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" alt="LSPD Logo" class="h-12 w-auto">
     <div>
         <h1 class="text-3xl font-bold tracking-tighter text-white" style="margin-bottom: 0;">LSPD</h1>
-        <p class="text-[10px] text-blue-400 font-mono tracking-widest uppercase" style="margin-top: -4px;">Vedenie</p>
+        <p class="text-[10px] text-blue-400 font-mono tracking-widest uppercase" style="margin-top: -4px;">Vedení</p>
     </div>
 </div>
 
         <nav class="hidden lg:flex items-center gap-x-8 text-sm font-medium text-white">
             <a href="index.html" class="nav-link hover:text-blue-400 transition flex items-center gap-x-2">
-                <i class="fa-solid fa-house"></i> Domov
+                <i class="fa-solid fa-house"></i> Domů
             </a>
             <a href="divize.html" class="nav-link hover:text-blue-400 transition flex items-center gap-x-2">
-                <i class="fa-solid fa-shield-halved"></i> Divízie
+                <i class="fa-solid fa-shield-halved"></i> Divize
             </a>
             <a href="vedeni.html" class="active-link flex items-center gap-x-2">
-                <i class="fa-solid fa-user-tie"></i> Vedenie
+                <i class="fa-solid fa-user-tie"></i> Vedení
             </a>
             <a href="academy.html" class="nav-link hover:text-blue-400 transition flex items-center gap-x-2">
-                <i class="fa-solid fa-graduation-cap"></i> Akadémia
+                <i class="fa-solid fa-graduation-cap"></i> Akademie
             </a>
             <a href="news.html" class="nav-link hover:text-blue-400 transition flex items-center gap-x-2">
-                <i class="fa-solid fa-bullhorn"></i> Oznámenia
+                <i class="fa-solid fa-bullhorn"></i> Oznámení
             </a>
         </nav>
 
         <div class="shrink-0">
             <a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/edit?chromeless=1" class="bg-white flex items-center gap-x-2 px-6 py-2.5 rounded-xl font-bold text-[#0a1428] text-sm transition-all hover:bg-red-600 hover:text-white">
                 <i class="fa-solid fa-triangle-exclamation"></i>
-                Podať sťažnosť
+                Podat stížnost
             </a>
         </div>
     </div>
 </header>
 
 <main class="main-content">
-    <span class="section-title">Najvyššie Vedenie</span>
+    
+    <span class="section-title">Kontakt </span>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-C59POcnfh1Jt4TRh1zW3UJVWz2sZ5No-h4e5qMQD3GWsjQ/viewform?usp=dialog" class="contact-big">
+    <div class="contact-big-img">
+        <img src="https://static.wikia.nocookie.net/diamond-city/images/c/c0/LSPD.png" alt="LSPD Logo">
+    </div>
+    <div class="contact-big-body">
+        <span class="contact-big-subtitle">Kontakt na vedení</span>
+        <h4 class="contact-big-title">Kontakt na vedení Los Santos Police Department</h4>
+    </div>
+    <div class="contact-big-arrow">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+    </div>
+</a>
+    <span class="section-title">High Command</span>
     <div class="grid-4">
         <div class="card card-vertical">
-            <div class="photo" style="aspect-ratio: 1/1;"><img src="https://cdn.discordapp.com/attachments/837731522102427708/1489712651985621082/Snimka_obrazovky_2026-04-02_231739.png?ex=69d364c5&is=69d21345&hm=b2a7478fab7e45ae37dde4dba081d9c57c4b78a4eaa1dd7f8ceeb7f8cdf73c22&"></div>
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
             <div class="info"><span class="rank-label">Chief of Police <br> <span class="insignia">★★★★</span> </span><h4 class="name">Percy Davidson</h4></div>
         </div>
         <div class="card card-vertical">
             <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
             <div class="info"><span class="rank-label">Assistant Chief<br><span class="insignia">★★★</span></span><h4 class="name">Johnatan White</h4></div>
         </div>
-        <div class="card card-vertical" style="opacity: 0.3;">
+        <div class="card card-vertical" >
             <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
-            <div class="info"><span class="rank-label">Deputy Chief<br><span class="insignia">★★</span></span><h4 class="vacant">Volné</h4></div>
+            <div class="info"><span class="rank-label">Deputy Chief<br><span class="insignia">★★</span></span><h4 class="name">Clarence Bennett</h4></div>
         </div>
         <div class="card card-vertical">
             <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
-            <div class="info"><span class="rank-label">Commander<br><span class="insignia">★</span></span><h4 class="name">Meno Priezvisko</h4></div>
+            <div class="info"><span class="rank-label">Commander<br><span class="insignia">★</span></span><h4 class="name">Ethan Knox</h4></div>
         </div>
     </div>
 
     <span class="section-title" style="grid-column:span 2; font-size:12px;">Captains</span>
     <div class="grid-3">
         <div class="card card-vertical">
-            <div class="photo" style="aspect-ratio:1/1;"><i class="fa-solid fa-user" style="font-size:55px;"></i></div>
+            <div class="photo" style="aspect-ratio:1/1;"><i class="fa-solid fa-user"></i></div>
             <div class="info">
                 <span class="rank-label">Captain <br> <span class="insignia" style="color: #67e8f9;">❚❚</span></span>
                 <h4 class="name" style="font-size:22px;">Henry Brooks</h4>
             </div>
         </div>
-        <div class="card card-vertical" style="opacity: 0.3;">
-            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div>
+        <div class="card card-vertical vacant2" >
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
             <div class="info">
                 <span class="rank-label">Captain <br> <span class="insignia" style="color: #67e8f9;">❚❚</span></span>
                 <h4 class="vacant" style="font-size:22px;">Volné</h4>
@@ -143,16 +173,16 @@
         </div>
     </div>
 
-    <span class="section-title" style="margin-top: 50px;">Lieutenants</span>
+    <span class="section-title" style="margin-top: 50px;"> Lieutenants</span>
     <div class="grid-2">
         <div class="card card-vertical">
-            <div class="photo" style="aspect-ratio:1/1;"><i class="fa-solid fa-user" style="font-size:55px;"></i></div>
+            <div class="photo" style="aspect-ratio:1/1;"><i class="fa-solid fa-user"></i></div>
             <div class="info">
                 <span class="rank-label">Lieutenant<br> <span class="insignia" style="color: #67e8f9;">❚</span></span>
                 <h4 class="name" style="font-size:22px;">Franklin Merte</h4>
             </div>
         </div>
-        <div class="card card-vertical" style="min-height:340px; opacity: 0.3;">
+        <div class="card card-vertical vacant2"     >
             <div class="photo" style="aspect-ratio:1/1;"><i class="fa-solid fa-user" style="font-size:55px;"></i></div>
             <div class="info">
                 <span class="rank-label">Lieutenant <br> <span class="insignia" style="color: #67e8f9;">❚</span></span>
@@ -167,31 +197,93 @@
             <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
             <div class="info">
                 <span class="rank-label">Sergeant II <br> <span class="insignia" style="color: #67e8f9;">⟨⟩⟩⟩</span></span>
-                <h4 class="name" style="font-size: 15px;">Meno Priezvisko</h4>
+                <h4 class="name" style="font-size: 15px;">Jméno Příjmení</h4>
             </div>
         </div>
-        <div class="card card-vertical" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant II <br> <span class="insignia" style="color: #67e8f9;">⟨⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 14px; font-style: italic;">Volné</h4></div></div>
-        <div class="card card-vertical" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant II <br> <span class="insignia" style="color: #67e8f9;">⟨⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 14px; font-style: italic;">Volné</h4></div></div>
-        <div class="card card-vertical" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant II <br> <span class="insignia" style="color: #67e8f9;">⟨⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 14px; font-style: italic;">Volné</h4></div></div>
+        <div class="card card-vertical vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant II <br> <span class="insignia" style="color: #67e8f9;">⟨⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 15px;">Volné</h4>
+            </div>
+        </div>
+        <div class="card card-vertical vacant2" >
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant II <br> <span class="insignia" style="color: #67e8f9;">⟨⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 15px;">Volné</h4>
+            </div>
+        </div>
+        <div class="card card-vertical vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant II <br> <span class="insignia" style="color: #67e8f9;">⟨⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 15px;">Volné</h4>
+            </div>
+        </div>
+        
     </div>
 
-    <span class="section-title">Sergeant I </span>
+    <span class="section-title">Sergeant I</span>
     <div class="grid-4">
         <div class="card card-vertical2">
             <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
             <div class="info">
                 <span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span>
-                <h4 class="name" style="font-size: 14px;">Meno Priezvisko</h4>
+                <h4 class="name" style="font-size: 14px;">John Anderson</h4>
             </div>
         </div>
-        <div class="card card-vertical2" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 13px; font-style: italic;">Volné</h4></div></div>
-        <div class="card card-vertical2" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 13px; font-style: italic;">Volné</h4></div></div>
-        <div class="card card-vertical2" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 13px; font-style: italic;">Volné</h4></div></div>
-        <div class="card card-vertical2" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 13px; font-style: italic;">Volné</h4></div></div>
-        <div class="card card-vertical2" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 13px; font-style: italic;">Volné</h4></div></div>
-        <div class="card card-vertical2" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 13px; font-style: italic;">Volné</h4></div></div>
-        <div class="card card-vertical2" style="opacity: 0.3;"><div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-image"></i></div><div class="info"><span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span><h4 class="vacant" style="font-size: 13px; font-style: italic;">Volné</h4></div></div>
+        <div class="card card-vertical2 vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 14px;">Volné</h4>
+            </div>
+        </div>
+        <div class="card card-vertical2 vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 14px;">Volné</h4>
+            </div>
+        </div>
+        <div class="card card-vertical2 vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 14px;">Volné</h4>
+            </div>
+        </div>
+        <div class="card card-vertical2 vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 14px;">Volné</h4>
+            </div>
+        </div>
+        <div class="card card-vertical2 vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 14px;">Volné</h4>
+            </div>
+        </div>
+        <div class="card card-vertical2 vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 14px;">Volné</h4>
+            </div>
+        </div>
+        <div class="card card-vertical2 vacant2">
+            <div class="photo" style="aspect-ratio: 1/1;"><i class="fa-solid fa-user"></i></div>
+            <div class="info">
+                <span class="rank-label">Sergeant I <br> <span class="insignia" style="color: #67e8f9;">⟩⟩⟩</span></span>
+                <h4 class="name vacant" style="font-size: 14px;">Volné</h4>
+            </div>
+        </div>      
     </div>
+
 </main>
 
 <footer class="main-footer">
@@ -203,38 +295,38 @@
                     <h2 class="text-2xl font-black tracking-tighter text-white">LSPD</h2>
                 </div>
                 <p class="text-slate-500 text-sm leading-relaxed">
-                    Oficiálny portál Departmentu polície Los Santos. Chránime bezpečnosť a poriadok v uliciach nášho mesta 24/7.
+                    Oficiální portál policejního oddělení Los Santos. Chráníme bezpečnost a pořádek v ulicích našeho města 24/7.
                 </p>
             </div>
 
             <div>
-                <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Navigácia</h4>
+                <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Navigace</h4>
                 <ul class="footer-links space-y-3">
-                    <li><a href="index.html" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Hlavná stránka</a></li>
-                    <li><a href="divize.html" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Divízie sboru</a></li>
-                    <li><a href="vedeni.html" class="text-slate-500 hover:text-blue-400 text-sm transition-all font-bold text-white">Vedenie LSPD</a></li>
-                    <li><a href="academy.html" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Policajná akadémia</a></li>
+                    <li><a href="index.html" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Hlavní stránka</a></li>
+                    <li><a href="divize.html" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Divize sboru</a></li>
+                    <li><a href="vedeni.html" class="text-slate-500 hover:text-blue-400 text-sm transition-all font-bold text-white">Vedení LSPD</a></li>
+                    <li><a href="academy.html" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Policejní akademie</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Podpora</h4>
                 <ul class="footer-links space-y-3">
-                    <li><a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/edit?chromeless=1" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Sťažnosti na dôstojníkov</a></li>
-                    <li><a href="#" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Trestný zákonník</a></li>
-                    <li><a href="#" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Najčastejšie otázky</a></li>
+                    <li><a href="https://docs.google.com/forms/d/1sW8FSomtoTWtTk2x8ZR8gZJqjrSR2MvSDOze3cM3F0Y/edit?chromeless=1" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Stížnosti na důstojníky</a></li>
+                    <li><a href="https://discord.gg/twQmHkRu5R" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Trestní zákoník</a></li>
+                    <li><a href="#" class="text-slate-500 hover:text-blue-400 text-sm transition-all">Časté dotazy</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Sídlo</h4>
                 <p class="text-slate-500 text-sm mb-4">
-                    Vinewood Police station<br>
-                    Elgin Avenue, Los Santos
+                    Vespucci Police Station<br>
+                    San Andreas Avenue, Los Santos
                 </p>
                 <div class="flex gap-4">
                     <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><i class="fa-brands fa-discord"></i></a>
-                    <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://docs.google.com/forms/d/1-U0PTSVVx-R2bm7Mfep4bvLITmagsBzN_9uMXjS5U7w/viewform?edit_requested=true" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -243,6 +335,10 @@
             <p class="text-slate-600 text-xs font-medium uppercase tracking-widest">
                  To Protect and Serve
             </p>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-600 hover:text-white text-[10px] uppercase font-bold tracking-tighter transition-colors">Ochrana soukromí</a>
+                <a href="#" class="text-slate-600 hover:text-white text-[10px] uppercase font-bold tracking-tighter transition-colors">Podmínky služby</a>
+            </div>  
         </div>
     </div>
 </footer>
