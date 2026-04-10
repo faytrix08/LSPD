@@ -88,6 +88,15 @@
     background: rgba(59, 130, 246, 0.02);
     color: aqua;
 }
+.big-address-card1:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    background: rgba(59, 130, 246, 0.02);
+    color: aqua;
+}
+
+
+
 .icon-circle {
     width: 80px;
     height: 80px;
