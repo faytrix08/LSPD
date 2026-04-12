@@ -1416,8 +1416,8 @@ html {
 
 
 .station-container-final { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; margin-top: 30px; }
-.station-card-v2 { background: #111d2b; border: 1px solid rgba(255,255,255,0.05); border-radius: 25px; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: 0.3s; }
-.station-card-v2:hover { background: #162536; border-color: #3b82f6; transform: translateY(-5px); }
+.station-card-v2 { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 25px; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: 0.3s; }
+.station-card-v2:hover { background: rgba(255, 255, 255, 0.02); border-color: #3b82f6; transform: translateY(-5px); }
 .icon-box-v2 { width: 70px; height: 70px; background: rgba(59,130,246,0.1); color: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 25px; box-shadow: 0 0 20px rgba(59,130,246,0.1); }
 .st-label { color: #3b82f6; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
 .st-name { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
