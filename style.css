@@ -85,7 +85,7 @@
 .big-address-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
-    background: rgba(246, 59, 199, 0.02);
+    background: rgba(59, 130, 246, 0.02);
     color: aqua;
 }
 .big-address-card1:hover {
