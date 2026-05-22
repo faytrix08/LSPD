@@ -506,7 +506,7 @@ html {
 .academy-card:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(59, 130, 246, 0.2);
+    border-color: rgb(255, 0, 0);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -720,7 +720,7 @@ html {
 /* --- UNIFIED FOOTER STYLES --- */
 
 .main-footer {
-    background-color: #ff009d; /* Ešte o niečo tmavšia ako body */
+    background-color: #08101f; /* Ešte o niečo tmavšia ako body */
     border-top: 1px solid rgba(255, 255, 255, 0.03);
     margin-top: 100px;
 }
