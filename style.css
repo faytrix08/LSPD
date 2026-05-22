@@ -80,14 +80,14 @@
 .big-address-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
-    background: rgba(234, 179, 8, 0.02); /* Žluté pozadí při hoveru */
-    color: var(--aqua);
+    background: rgba(234, 179, 8, 0.02); /* Opravené na žltú */
+    color: aqua;
 }
 .big-address-card1:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
-    background: rgba(234, 179, 8, 0.02); /* Žluté pozadí při hoveru */
-    color: var(--aqua);
+    background: rgba(234, 179, 8, 0.02); /* Opravené na žltú */
+    color: aqua;
 }
 
 .icon-circle {
