@@ -1,26 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@700&display=swap');
 
 :root {
-    --accent: #eab308; /* Pekná sýta žltá (Tailwind yellow-500) */
+    --accent: #3b82f6;
     --border: rgba(255, 255, 255, 0.1);
     --aqua: #00ffff;
-    --academy-blue: #ca8a04; /* Tmavožltá / Jantárová (Tailwind yellow-600) */
+    --academy-blue: #3b82f6;
     --academy-cyan: #06b6d4;
     --academy-green: #10b981;
     --academy-red: #ef4444;
     --academy-bg-card: rgba(255, 255, 255, 0.02);
     --academy-border: rgba(255, 255, 255, 0.05);
-    
-    /* NOVÁ POMOCNÁ PREMENNÁ PRE ŽLTÉ RGBA EFEKTY (pôvodná modrá 59, 130, 246) */
-    --accent-rgba-glow: 234, 179, 8; 
 }
-
 
 /* --- TITULKY SEKCÍ --- */
 .section-title-box {
     text-align: center;
     margin-bottom: 3rem;
-}
+    }
 .section-label {
     color: var(--accent);
     font-family: 'Roboto Mono', monospace;
@@ -28,8 +24,10 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
-    display: block !important;
-    margin-bottom: 15px !important;
+    /* ... tvoje stávající věci ... */
+    display: block !important; /* Důležité, aby margin fungoval */
+    margin-bottom: 15px !important; /* Tohle vytvoří mezeru pod nápisem LOKÁCIE */
+
 }
 .section-title {
     color: white;
@@ -38,16 +36,17 @@
     margin-top: 10px;
 }
 
+/* Toto opraví mezeru u LOKÁCIE a KRONIKA */
 .section-title-box .section-label {
     display: block !important;
-    margin-bottom: 25px !important;
+    margin-bottom: 25px !important; /* Tady si nastav mezeru, jakou chceš */
 }
 
+/* Toto zajistí, aby štítky UVNITŘ karet (jako Administratíva) zůstaly v pořádku */
 .big-address-card .section-label {
     display: inline-block !important;
     margin-bottom: 10px !important;
 }
-
 /* --- ADRESOVÉ KARTY --- */
 .big-address-card {
     background: rgba(255, 255, 255, 0.03);
@@ -57,10 +56,12 @@
     text-align: center;
     transition: 0.4s ease;
     color: white;
+/* ... tvoje stávající věci ... */
     margin-left: auto !important;
     margin-right: auto !important;
-    max-width: 1200px;
+    max-width: 1200px; /* Nastav šířku, aby nebyla přes celou obrazovku */
     margin-top: 50px;
+    
 }
 
 .big-address-card1 {
@@ -71,29 +72,35 @@
     text-align: center;
     transition: 0.4s ease;
     color: white;
+/* ... tvoje stávající věci ... */
     margin-left: auto !important;
     margin-right: auto !important;
-    max-width: 1200px;
+    max-width: 1200px; /* Nastav šířku, aby nebyla přes celou obrazovku */
+    
     margin-bottom: 50px;
 }
+
+
 
 .big-address-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
-    background: rgba(234, 179, 8, 0.02); /* Opravené na žltú */
+    background: rgba(59, 130, 246, 0.02);
     color: aqua;
 }
 .big-address-card1:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
-    background: rgba(234, 179, 8, 0.02); /* Opravené na žltú */
+    background: rgba(59, 130, 246, 0.02);
     color: aqua;
 }
+
+
 
 .icon-circle {
     width: 80px;
     height: 80px;
-    background: rgba(234, 179, 8, 0.1); /* Žlutý nádech */
+    background: rgba(59, 130, 246, 0.1);
     color: var(--accent);
     border-radius: 50%;
     margin: 0 auto 30px;
@@ -101,7 +108,7 @@
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    box-shadow: 0 0 20px rgba(234, 179, 8, 0.1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
 }
 
 /* --- MEGA KARTA PRÍBEHU --- */
@@ -135,7 +142,7 @@
 .marker-line {
     width: 2px;
     flex-grow: 1;
-    background: rgba(234, 179, 8, 0.2); /* Žlutá linie linky příběhu */
+    background: rgba(59, 130, 246, 0.2);
     margin: 5px 0;
 }
 
@@ -189,7 +196,7 @@
 }
 
 .navbar .text-blue-400 {
-    color: #eab308 !important; /* Šerifská žlutá */
+    color: #3b82f6 !important;
     font-family: 'Roboto Mono', monospace;
     font-size: 10px;
     letter-spacing: 2px;
@@ -220,11 +227,11 @@
 }
 
 .nav-link:hover {
-    color: #eab308 !important; /* Žlutá při hoveru v menu */
+    color: #3b82f6 !important;
 }
 
 .active-link {
-    color: #eab308 !important; /* Aktivní odkaz bude šerifsky žlutý */
+    color: #00ffff !important;
     font-weight: 700 !important;
 }
 
@@ -235,13 +242,13 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: #eab308;
-    box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    background: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
     border-radius: 10px;
 }
 
 .active-link i {
-    color: #eab308 !important;
+    color: #00ffff !important;
 }
 
 .navbar a:not(.active-link)::after {
@@ -250,7 +257,7 @@
 
 .navbar i {
     font-size: 1rem;
-    color: #eab308;
+    color: #3b82f6;
 }
 
 .navbar a.bg-white {
@@ -276,7 +283,8 @@ html {
     scroll-padding-top: 90px;
 }
 
-/* --- DIVIZE S FIXNÍM GRIDEM --- */
+/* --- !!! NOVÉ STYLY PRO DIVIZE S FIXNÍM GRIDEM !!! --- */
+
 .division-row {
     display: grid;
     gap: 24px;
@@ -284,6 +292,7 @@ html {
     width: 100%;
 }
 
+/* Specifické rozložení řádků podle tvého přání */
 .row-3 { grid-template-columns: repeat(3, 1fr); }
 .row-4 { grid-template-columns: repeat(4, 1fr); }
 .row-2 { grid-template-columns: repeat(2, 1fr); }
@@ -305,11 +314,12 @@ html {
 
 .division-card:hover {
     transform: translateY(-12px);
-    background: linear-gradient(145deg, rgba(234, 179, 8, 0.08) 0%, rgba(10, 20, 40, 0.5) 100%);
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.08) 0%, rgba(10, 20, 40, 0.5) 100%);
     border-color: var(--aqua);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Vnitřní ikona divize */
 .division-card .icon-circle {
     width: 75px;
     height: 75px;
@@ -330,6 +340,7 @@ html {
     background: rgba(255, 255, 255, 0.05);
 }
 
+/* Texty v divizích */
 .division-card h3.name {
     color: #ffffff !important;
     font-size: 1.6rem;
@@ -345,6 +356,7 @@ html {
     margin-top: 2px;
 }
 
+/* Vysouvací detail pod nadpisem */
 .division-card .div-detail {
     max-height: 0;
     opacity: 0;
@@ -365,6 +377,7 @@ html {
     margin-bottom: 20px;
 }
 
+/* Leader Box (Vedení divize) */
 .division-card .leader-box {
     padding: 15px 20px;
     background: rgba(0, 0, 0, 0.3);
@@ -391,7 +404,7 @@ html {
     margin: 0;
 }
 
-/* --- VEDENIE CARDS --- */
+/* --- VEDENIE CARDS (ZACHOVÁNO) --- */
 .leader-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -403,7 +416,7 @@ html {
 .leader-card:hover {
     transform: translateY(-10px);
     border-color: var(--aqua);
-    background: rgba(234, 179, 8, 0.02);
+    background: rgba(0, 255, 255, 0.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -429,8 +442,8 @@ html {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background: #eab308; /* Žlutý odznak hodnosti */
-    color: black; /* Černý text na žlutém podkladu pro lepší kontrast */
+    background: #3b82f6;
+    color: white;
     padding: 6px 16px;
     border-radius: 12px;
     font-size: 0.75rem;
@@ -452,7 +465,7 @@ html {
     margin-bottom: 15px;
 }
 
-/* KARTY ROSTERU */
+/* KARTY ROSTERU (ZACHOVÁNO) */
 .card-vertical {
     display: flex;
     flex-direction: column;
@@ -461,14 +474,15 @@ html {
 
 .card-vertical:hover {
     transform: translateY(-5px);
-    border-color: rgba(234, 179, 8, 0.4);
-    background: rgba(234, 179, 8, 0.02);
+    border-color: rgba(0, 255, 255, 0.4);
+    background: rgba(0, 255, 255, 0.02);
 }
 
 .rank-label { letter-spacing: 2px; font-size:medium; }
 .insignia { font-family: 'Roboto Mono', monospace; font-weight: bold; }
 .name { letter-spacing: -0.5px; }
 
+/* Responzivita pro řádky */
 @media (max-width: 1024px) {
     .row-3, .row-4, .row-2 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -477,6 +491,8 @@ html {
 }
 
 /* --- ACADEMY PREMIUM STYLES --- */
+
+/* --- ZÁKLADNÉ NASTAVENIE KARIET --- */
 .academy-card {
     background: var(--academy-bg-card);
     border: 1px solid var(--academy-border);
@@ -490,10 +506,11 @@ html {
 .academy-card:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(234, 179, 8, 0.2);
+    border-color: rgba(59, 130, 246, 0.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* --- RECRUITMENT STATUS CARD (Hero Banner) --- */
 .recruitment-status-card {
     position: relative;
     padding: 60px 40px;
@@ -507,7 +524,7 @@ html {
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(234, 179, 8, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
     pointer-events: none;
     transition: background 0.5s ease;
 }
@@ -541,6 +558,7 @@ html {
     margin-bottom: 20px;
 }
 
+/* --- STATUS LOGIKA (DYNAMICKÉ FARBY) --- */
 /* Otvorený nábor */
 .status-open .status-main-text { color: var(--academy-green); text-shadow: 0 0 30px rgba(16, 185, 129, 0.3); }
 .status-open .status-line { background: var(--academy-green); box-shadow: 0 0 20px var(--academy-green); }
@@ -553,6 +571,7 @@ html {
 .status-closed .card-overlay { background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.12) 0%, transparent 70%); }
 .status-closed .apply-action-btn { opacity: 0.5; pointer-events: none; filter: grayscale(1); }
 
+/* --- TLAČIDLÁ PRIHLÁŠOK --- */
 .apply-action-btn {
     display: inline-flex;
     align-items: center;
@@ -572,9 +591,10 @@ html {
     transform: scale(1.05) translateY(-3px);
     background: var(--academy-blue);
     color: #ffffff;
-    box-shadow: 0 15px 40px rgba(234, 179, 8, 0.4);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
 }
 
+/* --- POŽIADAVKY (REQS) --- */
 .req-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--academy-border);
@@ -587,15 +607,15 @@ html {
 }
 
 .req-item:hover {
-    background: rgba(234, 179, 8, 0.05);
-    border-color: rgba(234, 179, 8, 0.3);
+    background: rgba(59, 130, 246, 0.05);
+    border-color: rgba(59, 130, 246, 0.3);
     transform: translateX(10px);
 }
 
 .req-icon {
     width: 45px;
     height: 45px;
-    background: rgba(234, 179, 8, 0.1);
+    background: rgba(59, 130, 246, 0.1);
     color: var(--academy-blue);
     border-radius: 12px;
     display: flex;
@@ -609,27 +629,28 @@ html {
     font-weight: 700;
 }
 
-/* --- TRANSFER PANEL --- */
+/* --- TRANSFER PANEL (PREMIUM STYLE) --- */
 .transfer-panel {
-    background: linear-gradient(135deg, rgba(234, 179, 8, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border-color: rgba(234, 179, 8, 0.2);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-color: rgba(6, 182, 212, 0.2);
 }
 
 .transfer-panel:hover {
     border-color: var(--academy-cyan);
-    box-shadow: 0 20px 40px rgba(234, 179, 8, 0.15);
+    box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
 }
 
 .icon-box-premium {
     width: 60px;
     height: 60px;
-    background: rgba(234, 179, 8, 0.1);
+    background: rgba(6, 182, 212, 0.1);
     border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* --- ANIMÁCIE --- */
 .pulse-dot {
     width: 10px;
     height: 10px;
@@ -646,14 +667,18 @@ html {
     100% { transform: scale(2.8); opacity: 0; }
 }
 
+/* Fix pre responzivitu textu */
 @media (max-width: 768px) {
     .recruitment-status-card { padding: 40px 25px; }
     .status-main-text { font-size: 2.2rem; }
 }
 
+/* --- STATUS FARBY (DYNAMICKÉ FARBY + BORDER) --- */
+
+/* Otvorený nábor (Zelený) */
 .status-open.recruitment-status-card {
-    border-color: rgba(16, 185, 129, 0.4) !important;
-    box-shadow: 0 0 40px rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.4) !important; /* Zelený okraj */
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.1);    /* Jemná vonkajšia žiara */
 }
 .status-open .status-main-text { 
     color: var(--academy-green); 
@@ -669,9 +694,10 @@ html {
     animation: pulse-green 2s infinite; 
 }
 
+/* Zatvorený nábor (Červený) */
 .status-closed.recruitment-status-card {
-    border-color: rgba(239, 68, 68, 0.4) !important;
-    box-shadow: 0 0 40px rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.4) !important; /* Červený okraj */
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.1);      /* Jemná vonkajšia žiara */
 }
 .status-closed .status-main-text { 
     color: var(--academy-red); 
@@ -690,9 +716,11 @@ html {
     background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.12) 0%, transparent 70%); 
 }
 
+
 /* --- UNIFIED FOOTER STYLES --- */
+
 .main-footer {
-    background-color: #08101f;
+    background-color: #08101f; /* Ešte o niečo tmavšia ako body */
     border-top: 1px solid rgba(255, 255, 255, 0.03);
     margin-top: 100px;
 }
@@ -708,7 +736,7 @@ html {
 }
 
 .footer-links a {
-    color: #64748b;
+    color: #64748b; /* Slate-500 */
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -716,8 +744,8 @@ html {
 }
 
 .footer-links a:hover {
-    color: var(--accent);
-    padding-left: 5px;
+    color: var(--accent); /* Tvoja modrá farba */
+    padding-left: 5px; /* Jemný posun pri hoveri */
 }
 
 .footer-social-icon {
@@ -737,22 +765,36 @@ html {
 
 .footer-social-icon:hover {
     background: var(--accent);
-    color: black; /* Černá ikona na žlutém pozadí */
+    color: white;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(234, 179, 8, 0.3);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
 }
 
+/* Fix pre plynulé scrollovanie a okraje */
 @media (max-width: 768px) {
     .main-footer { text-align: center; }
     .main-footer .flex, .main-footer .flex-col { align-items: center; justify-content: center; }
     .footer-links a:hover { padding-left: 0; }
 }
 
+
 /* --- NEWS / ANNOUNCEMENTS --- */
+
+/* --- NEWS / ANNOUNCEMENTS --- */
+
+/* --- NEWS / ANNOUNCEMENTS --- */
+
+/* --- NEWS / ANNOUNCEMENTS --- */
+
+/* --- NEWS / ANNOUNCEMENTS --- */
+
+/* Badge "Tlačová správa" - OPRAVA ČERNÉ BARVY */
+/* --- JEDNA UNIVERZÁLNÍ KARTA - OPRAVA --- */
+
 .news-card-wrapper {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    background: #0f172a;
+    background: #0f172a; /* Tmavé pozadí karty */
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 40px !important;
     overflow: hidden;
@@ -770,6 +812,7 @@ html {
     z-index: 2;
 }
 
+/* TEXTY - OPRAVA ČERNÉ BARVY */
 .card-title {
     color: #ffffff !important;
     font-size: 2.8rem;
@@ -781,13 +824,13 @@ html {
 }
 
 .card-text {
-    color: #94a3b8 !important;
+    color: #94a3b8 !important; /* Světle šedá čitelná barva */
     font-size: 1rem;
     line-height: 1.6;
 }
 
 .news-badge {
-    color: #eab308 !important; /* Žlutý tiskový odznak */
+    color: #3b82f6 !important;
     font-family: 'Roboto Mono', monospace;
     font-size: 10px;
     font-weight: 800;
@@ -802,7 +845,8 @@ html {
     margin-left: 10px;
 }
 
-.news-toggle { display: none; }
+/* ROZBALOVACÍ LOGIKA (ČISTÉ CSS) */
+.news-toggle { display: none; } /* Skrytí checkboxu */
 
 .expandable-content {
     max-height: 0;
@@ -817,15 +861,17 @@ html {
     margin: 20px 0;
 }
 
+/* AKCE PŘI ZAŠKRTNUTÍ */
 .news-toggle:checked ~ .news-main-card .expandable-content {
     max-height: 1000px;
     opacity: 1;
 }
 
+/* TLAČÍTKO */
 .read-more-btn {
     cursor: pointer;
     margin-top: 30px;
-    color: #eab308;
+    color: #3b82f6;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 11px;
@@ -838,10 +884,12 @@ html {
 .news-toggle:checked ~ .news-main-card .read-more-btn .show-text { display: none; }
 .news-toggle:checked ~ .news-main-card .read-more-btn .hide-text { display: inline-block; }
 
+/* OBRÁZEK */
 .card-image-side { position: relative; background: #1e293b; }
 .card-image-side img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
 .image-gradient { position: absolute; inset: 0; background: linear-gradient(90deg, #0f172a 0%, transparent 100%); }
 
+/* RESPONZIVITA */
 @media (max-width: 1024px) {
     .news-card-wrapper { grid-template-columns: 1fr; }
     .card-image-side { height: 250px; order: -1; }
@@ -849,16 +897,25 @@ html {
 }
 
 /* --- EMERGENCY BROADCAST BAR --- */
+
+/*.emergency-wrapper{
+    width: 100%;
+    position: relative;
+    z-index: 999;}  /* Aby byl nad vším ostatním */
 .emergency-wrapper {
     display: none !important;
 }
 
+/* Skrytí checkboxu */
+/* Definitivní skrytí toho zaškrtávacího políčka v rohu */ 
+
+/* Logika zavření */
 .alert-hide-check:checked + .emergency-bar {
     display: none;
 }
 
 .emergency-bar {
-    background: #450a0a;
+    background: #450a0a; /* Velmi tmavě červená */
     border-bottom: 2px solid #ef4444;
     padding: 15px 40px;
     position: relative;
@@ -938,6 +995,8 @@ html {
     transform: scale(1.1);
 }
 
+/* --- ANIMACE --- */
+
 @keyframes alert-pulse-anim {
     0% { opacity: 0.05; }
     50% { opacity: 0.2; }
@@ -949,38 +1008,46 @@ html {
     to { transform: scale(1.1); box-shadow: 0 0 25px rgba(239, 68, 68, 0.8); }
 }
 
+/* Responzivita */
 @media (max-width: 768px) {
     .emergency-bar { padding: 15px 20px; }
     .alert-main-text { font-size: 0.85rem; }
-    .alert-blink-icon { display: none; }
+    .alert-blink-icon { display: none; } /* Na mobilu schováme ikonu pro víc místa */
 }
 
+/* Když je checkbox zaškrtnutý, následující prvek .emergency-bar zmizí */
 .alert-hide-check:checked + .emergency-bar {
     display: none;
 }
 
-/* --- RECRUITMENT FLEX ROW --- */
+/* --- NOVÝ NÁBOROVÝ GRID --- */
+/* --- ACADEMY CARDS SIDE-BY-SIDE --- */
+
+/* --- SMART ACADEMY SWITCHER --- */
+
+/* --- PREMIUM ACADEMY SWITCHER --- */
+
 .recruitment-flex-row {
     display: flex;
-    gap: 40px;
+    gap: 40px; /* Větší mezera mezi levou a pravou kartou */
     width: 100%;
     padding: 20px 0;
-    margin-top: 20px;
+    margin-top: 20px; /* Mezera od horního nápisu */
 }
 
 .recruitment-mini-card {
     flex: 1;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 40px !important;
-    padding: 50px;
+    border-radius: 40px !important; /* Ještě o něco kulatější rohy pro "soft" vzhled */
+    padding: 50px; /* Zvětšený vnitřní prostor pro text a tlačítko */
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-/* Otevřený nábor (Zelená zachována pro stav, ale s šerifským stínem) */
+/* --- EFEKTY PRO OTEVŘENO (Zelená) --- */
 .status-open {
     border-color: rgba(16, 185, 129, 0.4) !important;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(16, 185, 129, 0.05);
@@ -996,6 +1063,7 @@ html {
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
+/* --- EFEKTY PRO ZAVŘENO (Červená) --- */
 .status-closed {
     border-color: rgba(239, 68, 68, 0.3) !important;
     opacity: 0.85;
@@ -1010,6 +1078,7 @@ html {
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
+/* --- VNITŘNÍ PRVKY --- */
 .mini-card-header { 
     display: flex; 
     justify-content: space-between; 
@@ -1064,6 +1133,7 @@ html {
     margin-bottom: 35px; 
 }
 
+/* --- TLAČÍTKO --- */
 .mini-apply-btn {
     display: block; 
     width: 100%; 
@@ -1085,10 +1155,10 @@ html {
     cursor: pointer;
 }
 .status-open .mini-apply-btn:hover { 
-    background: #eab308; /* Žluté tlačítko přihlášky */
-    color: black;
+    background: #3b82f6; 
+    color: white;
     transform: scale(1.02);
-    box-shadow: 0 15px 30px rgba(234, 179, 8, 0.3);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
 }
 
 .status-closed .mini-apply-btn { 
@@ -1105,16 +1175,18 @@ html {
     }
 } 
 
+/* Oprava barev pro badge stavu */
 .status-open .mini-status-text { 
-    color: #10b981 !important; 
+    color: #10b981 !important; /* Vynucená zelená */
     font-weight: 900;
 }
 
 .status-closed .mini-status-text { 
-    color: #ef4444 !important; 
+    color: #ef4444 !important; /* Vynucená červená */
     font-weight: 900;
 }
 
+/* Pokud je černá i ta tečka, pojďme ji taky pojistit */
 .status-open .mini-dot {
     background-color: #10b981 !important;
     box-shadow: 0 0 10px #10b981 !important;
@@ -1125,39 +1197,58 @@ html {
 }
 
 /* --- MISSION & VALUES STYLES --- */
+
+/* --- OPRAVA KARET MISE A HODNOT --- */
+
+/* Kontejner pro 3 karty vedle sebe */
+/* --- EMERGENCY RESET PRO MISE A HODNOTY --- */
+
+/* ========================================= */
+/* CSS: MISSION & VALUES (PREMIUM v3)        */
+/* ========================================= */
+
+/* ZÁKLADNÍ NASTAVENÍ SEKCE */
 .premium-mission-section {
     padding: 120px 0;
+    /* Jemný radiální gradient na pozadí celé sekce pro hloubku */
     position: relative;
     overflow: hidden;
 }
 
+/* --- 1. VELKÁ HERO KARTA (Mega Card) --- */
 .premium-hero-card {
+    /* ZMĚNA: Místo gradientu dáme pevnou tmavou barvu tvého webu */
     background: #0f172a !important; 
+    
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(234, 179, 8, 0.3) !important; /* Šerifský tón ohraničení */
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
     border-radius: 50px !important;
     padding: 70px;
     position: relative;
     overflow: hidden;
     margin-bottom: 60px;
+    
+    /* ZMĚNA: Snížíme stín, aby nepůsobil jako "tma" kolem karty */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3) !important;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
 }
 
+/* Hover efekt pro velkou kartu */
 .premium-hero-card:hover {
-    border-color: rgba(234, 179, 8, 0.6) !important;
+    border-color: rgba(59, 130, 246, 0.6) !important;
     transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6), 0 0 30px rgba(234, 179, 8, 0.1);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6), 0 0 30px rgba(59, 130, 246, 0.1);
 }
 
+/* Animovaná záře na pozadí velké karty */
 .card-glow {
     position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(234, 179, 8, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
     transition: 0.8s ease;
     pointer-events: none;
     z-index: 1;
@@ -1165,11 +1256,12 @@ html {
 
 .premium-hero-card:hover .card-glow {
     transform: translate(10%, 10%);
-    background: radial-gradient(circle, rgba(234, 179, 8, 0.12) 0%, transparent 50%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
 }
 
 .hero-card-content { position: relative; z-index: 2; }
 
+/* Typografie velké karty */
 .hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
 .hero-tag {
     color: var(--accent) !important;
@@ -1178,11 +1270,11 @@ html {
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 800;
-    background: rgba(234, 179, 8, 0.1);
+    background: rgba(59, 130, 246, 0.1);
     padding: 6px 16px;
     border-radius: 10px;
 }
-.hero-icon-box { font-size: 2.8rem; color: rgba(234, 179, 8, 0.2); transition: 0.3s; }
+.hero-icon-box { font-size: 2.8rem; color: rgba(59, 130, 246, 0.2); transition: 0.3s; }
 .premium-hero-card:hover .hero-icon-box { color: var(--accent); transform: rotate(-5deg); }
 
 .hero-title {
@@ -1204,6 +1296,7 @@ html {
     margin-bottom: 50px;
 }
 
+/* Footer velké karty */
 .hero-footer {
     display: flex;
     justify-content: space-between;
@@ -1217,7 +1310,7 @@ html {
 .sig-dept { color: var(--accent) !important; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
 .footer-seal { font-size: 4rem; color: rgba(255, 255, 255, 0.03); position: absolute; right: 0; bottom: -10px; }
 
-/* --- GRID PREMIUM KARET --- */
+/* --- 2. GRID PREMIUM KARET --- */
 .values-premium-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1235,6 +1328,7 @@ html {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
 }
 
+/* Hover efekty pro malé karty */
 .value-premium-card:hover {
     background: rgba(255, 255, 255, 0.04) !important;
     transform: translateY(-15px) scale(1.02);
@@ -1242,6 +1336,7 @@ html {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
+/* Animovaný proužek navrchu při hoveru */
 .v-card-loader {
     position: absolute;
     top: 0; left: 0;
@@ -1251,24 +1346,26 @@ html {
 }
 .value-premium-card:hover .v-card-loader { width: 100%; }
 
+/* Ikona v kartě */
 .v-icon-wrapper {
     width: 75px; height: 75px;
-    background: rgba(234, 179, 8, 0.1);
+    background: rgba(59, 130, 246, 0.1);
     color: var(--accent);
     border-radius: 20px;
     display: flex; align-items: center; justify-content: center;
     font-size: 2rem;
     margin: 0 auto 30px;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce efekt */
 }
 
 .value-premium-card:hover .v-icon-wrapper {
     background: var(--accent);
-    color: black; /* Černá ikona ve žlutém kruhu po najetí */
+    color: white;
     transform: rotate(10deg) scale(1.1);
-    box-shadow: 0 0 25px rgba(234, 179, 8, 0.4);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
 }
 
+/* Typografie malých karet */
 .mini-title {
     color: #ffffff !important;
     font-size: 1.9rem;
@@ -1284,6 +1381,7 @@ html {
     line-height: 1.7;
 }
 
+/* Modrá linka, která se vysune zespodu */
 .v-card-footer-line {
     position: absolute;
     bottom: 0; left: 0;
@@ -1293,6 +1391,7 @@ html {
 }
 .value-premium-card:hover .v-card-footer-line { width: 100%; }
 
+/* --- RESPONZIVITA --- */
 @media (max-width: 1100px) {
     .values-premium-grid { grid-template-columns: 1fr; }
     .premium-hero-card { padding: 40px; }
@@ -1300,20 +1399,28 @@ html {
     .hero-text { font-size: 1.15rem; max-width: 100%; }
 }
 
+.hero-card-overlay {
+    display: none !important;
+}
+
+/* Definitivní odstranění tmavých vrstev a záře */
 .hero-card-overlay, 
 .card-glow {
     display: none !important;
 }
 
+/* Zajištění, že pozadí sekce pod tím nebude dělat neplechu */
 .premium-mission-section {
-    background: transparent !important;
+    background: transparent !important; /* Pokud chceš vidět jen pozadí celého webu */
 }
 
-/* --- STATION CONTAINERS --- */
+
 .station-container-final { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; margin-top: 30px; }
 .station-card-v2 { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 25px; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: 0.3s; }
-.station-card-v2:hover { background: rgba(255, 255, 255, 0.02); border-color: #eab308; transform: translateY(-5px); }
-.icon-box-v2 { width: 70px; height: 70px; background: rgba(234,179,8,0.1); color: #eab308; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 25px; box-shadow: 0 0 20px rgba(234,179,8,0.1); }
-.st-label { color: #eab308; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
+.station-card-v2:hover { background: rgba(255, 255, 255, 0.02); border-color: #3b82f6; transform: translateY(-5px); }
+.icon-box-v2 { width: 70px; height: 70px; background: rgba(59,130,246,0.1); color: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 25px; box-shadow: 0 0 20px rgba(59,130,246,0.1); }
+.st-label { color: #3b82f6; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
 .st-name { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .st-desc { color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6; max-width: 80%; }
+
+
