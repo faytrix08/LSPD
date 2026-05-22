@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@700&display=swap');
 
 :root {
-    --accent: #eab308; /* Šerifská žlutá (gold/yellow) namísto původní modré */
+    --accent: #eab308; /* Pekná sýta žltá (Tailwind yellow-500) */
     --border: rgba(255, 255, 255, 0.1);
-    --aqua: #fef08a; /* Světlejší žlutá pro detaily/kontrast namísto azurové */
-    --academy-blue: #eab308;
-    --academy-cyan: #ca8a04;
+    --aqua: #00ffff;
+    --academy-blue: #ca8a04; /* Tmavožltá / Jantárová (Tailwind yellow-600) */
+    --academy-cyan: #06b6d4;
     --academy-green: #10b981;
     --academy-red: #ef4444;
     --academy-bg-card: rgba(255, 255, 255, 0.02);
     --academy-border: rgba(255, 255, 255, 0.05);
+    
+    /* NOVÁ POMOCNÁ PREMENNÁ PRE ŽLTÉ RGBA EFEKTY (pôvodná modrá 59, 130, 246) */
+    --accent-rgba-glow: 234, 179, 8; 
 }
+
 
 /* --- TITULKY SEKCÍ --- */
 .section-title-box {
