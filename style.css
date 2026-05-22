@@ -2,14 +2,14 @@
 
 :root {
     --accent: #f59e0b;
-    --border: rgba(255, 255, 255, 0.1);
+    --border: rgb(255, 255, 255);
     --aqua: #fcd34d;
     --academy-blue: #f59e0b;
     --academy-cyan: #fbbf24;
     --academy-green: #10b981;
     --academy-red: #ef4444;
-    --academy-bg-card: rgba(255, 255, 255, 0.02);
-    --academy-border: rgba(255, 0, 0, 0.05);
+    --academy-bg-card: rgb(47, 0, 255);
+    --academy-border: rgb(255, 0, 0);
 }
 
 /* --- TITULKY SEKCÍ --- */
@@ -1422,5 +1422,3 @@ html {
 .st-label { color: #3b82f6; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
 .st-name { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .st-desc { color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6; max-width: 80%; }
-
-
